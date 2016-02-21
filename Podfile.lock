@@ -1,0 +1,29 @@
+PODS:
+  - Bolts/Tasks (1.6.0)
+  - CardIO (5.3.1)
+  - GoogleMaps (1.11.1)
+  - Parse (1.12.0):
+    - Bolts/Tasks (~> 1.5)
+  - PayPal-iOS-SDK (2.13.1):
+    - PayPal-iOS-SDK/CardIO (= 2.13.1)
+    - PayPal-iOS-SDK/Core (= 2.13.1)
+  - PayPal-iOS-SDK/CardIO (2.13.1):
+    - CardIO (~> 5.3.1)
+  - PayPal-iOS-SDK/Core (2.13.1)
+  - UberRides (0.3.1)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - Parse
+  - PayPal-iOS-SDK
+  - UberRides
+
+SPEC CHECKSUMS:
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  CardIO: a299efcd0348c3b256a1da53f22951319c3855a2
+  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+  Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
+  PayPal-iOS-SDK: fc36f26c818d31b014044ec0b22c0861b2fe733f
+  UberRides: db7aead2e9c853fe481ac4dee03643fb274e884e
+
+COCOAPODS: 0.39.0
