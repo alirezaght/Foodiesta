@@ -689,7 +689,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a253ce1e-713b-4770-a25a-0028c5c9fce2";
+				PROVISIONING_PROFILE = "7d6181d6-1df9-4ed4-b608-2f1675ee923a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -712,7 +712,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a253ce1e-713b-4770-a25a-0028c5c9fce2";
+				PROVISIONING_PROFILE = "7d6181d6-1df9-4ed4-b608-2f1675ee923a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
 			};
 			name = Release;
