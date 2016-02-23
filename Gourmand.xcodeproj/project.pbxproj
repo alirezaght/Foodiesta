@@ -31,7 +31,6 @@
 		9A74A49C1C707CC80006605D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74A49B1C707CC80006605D /* libz.tbd */; };
 		9A74A49E1C707CDD0006605D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74A49D1C707CDD0006605D /* libsqlite3.tbd */; };
 		9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2B5E01C73121F0054AADC /* MapViewController.swift */; };
-		9AECB6711C74796600DF5FEE /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AECB6701C74796600DF5FEE /* TestController.swift */; };
 		DB0356C3D04F945F32840D97 /* Pods_GourmandTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D753141E2A6434BB5FA742 /* Pods_GourmandTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +91,10 @@
 		9A74A4991C707CBA0006605D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A74A49B1C707CC80006605D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9A74A49D1C707CDD0006605D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9AB7A7AA1C7C496700F7C0F6 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = "Pods/../build/Debug-iphoneos/ParseTwitterUtils.framework"; sourceTree = "<group>"; };
+		9AB7A7AC1C7C4A7400F7C0F6 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
+		9ABF7E411C7B2B3E0076D2D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9AC2B5E01C73121F0054AADC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		9AECB6701C74796600DF5FEE /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gourmand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmandUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EA6623CB74DAE870509538 /* Pods-GourmandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,11 +106,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A74A4961C707CA00006605D /* Social.framework in Frameworks */,
 				9A74A49E1C707CDD0006605D /* libsqlite3.tbd in Frameworks */,
 				9A74A49C1C707CC80006605D /* libz.tbd in Frameworks */,
 				9A74A49A1C707CBA0006605D /* SystemConfiguration.framework in Frameworks */,
 				9A74A4981C707CAD0006605D /* StoreKit.framework in Frameworks */,
-				9A74A4961C707CA00006605D /* Social.framework in Frameworks */,
 				9A74A4941C707C940006605D /* Security.framework in Frameworks */,
 				9A74A4921C707C840006605D /* QuartzCore.framework in Frameworks */,
 				9A74A4901C707C6D0006605D /* CoreLocation.framework in Frameworks */,
@@ -187,6 +188,7 @@
 				9A6F685A1C6F01550020BFB6 /* Info.plist */,
 				9A6F68521C6F01550020BFB6 /* Gourmand.xcdatamodeld */,
 				9A6F68881C6F3FFA0020BFB6 /* Localizable.strings */,
+				9AB7A7AC1C7C4A7400F7C0F6 /* Gourmand-Bridging-Header.h */,
 			);
 			path = Gourmand;
 			sourceTree = "<group>";
@@ -233,7 +235,6 @@
 			children = (
 				9AC2B5E01C73121F0054AADC /* MapViewController.swift */,
 				9A6F684D1C6F01550020BFB6 /* ViewController.swift */,
-				9AECB6701C74796600DF5FEE /* TestController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +242,8 @@
 		ADAAD0757119C8AB69A9C319 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AB7A7AA1C7C496700F7C0F6 /* ParseTwitterUtils.framework */,
+				9ABF7E411C7B2B3E0076D2D4 /* Twitter.framework */,
 				A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */,
 				14D753141E2A6434BB5FA742 /* Pods_GourmandTests.framework */,
 				BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */,
@@ -513,7 +516,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AECB6711C74796600DF5FEE /* TestController.swift in Sources */,
 				9A6F684E1C6F01550020BFB6 /* ViewController.swift in Sources */,
 				9A6F68541C6F01550020BFB6 /* Gourmand.xcdatamodeld in Sources */,
 				9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */,
@@ -591,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -635,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -673,16 +677,21 @@
 			baseConfigurationReference = 194E20D26A0A8B8F5C1C38DB /* Pods-Gourmand.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Gourmand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -691,16 +700,20 @@
 			baseConfigurationReference = 14CA7C847FB5E60AA0260167 /* Pods-Gourmand.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Gourmand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
 			};
 			name = Release;
 		};

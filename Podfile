@@ -9,6 +9,9 @@ pod 'UberRides'
 pod 'Parse'
 pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
+pod 'ParseFacebookUtilsV4'
+pod 'ParseTwitterUtils'
+pod 'ParseUI'
 end
 
 target 'GourmandTests' do
@@ -16,6 +19,9 @@ pod 'UberRides'
 pod 'Parse'
 pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
+pod 'ParseFacebookUtilsV4'
+pod 'ParseTwitterUtils'
+pod 'ParseUI'
 end
 
 target 'GourmandUITests' do
@@ -23,5 +29,8 @@ pod 'UberRides'
 pod 'Parse'
 pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
+pod 'ParseFacebookUtilsV4'
+pod 'ParseTwitterUtils'
+pod 'ParseUI'
 end
 
