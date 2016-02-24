@@ -11,7 +11,6 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseTwitterUtils
 import ParseUI
-
 class ViewController: UIViewController {
  
     @IBOutlet weak var txtEmail: UITextField!

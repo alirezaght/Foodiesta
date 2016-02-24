@@ -33,7 +33,7 @@ class MapViewController : UIViewController, CLLocationManagerDelegate {
 		if !didFindMyLocation {
 			let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
 			mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
-            let user = PFUser.currentUser();
+            let user =  PFUser.currentUser();
             let geoPoint = PFGeoPoint(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude);
             user?.addObject( geoPoint , forKey: "location" )
             user?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
