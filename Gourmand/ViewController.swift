@@ -66,6 +66,7 @@ class ViewController: UIViewController {
                     self.signIn()
 					print("User signed up and logged in with Twitter!")
 				} else {
+                    self.updateTwitterUserInfo()
 					print("User logged in with Twitter!")
                     self.signIn()
 				}
