@@ -12,7 +12,13 @@ import UIKit
 import tolo
 import SwiftEventBus
 
+let notification = "pagechangedinpageviewcontroller"
+
 class SearchPageController : UIPageViewController {
+    
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +30,35 @@ class SearchPageController : UIPageViewController {
                 animated: true,
                 completion: nil)
                     }
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectSecondPage", name: "select_map", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectFirstPage", name: "select_table", object: nil)
+
+        
+       
     }
+    
+    func selectFirstPage(){
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                direction: .Reverse ,
+                animated: true,
+                completion: nil)
+        }
+    }
+    
+    func selectSecondPage(){
+        if let lastViewController = orderedViewControllers.last {
+            setViewControllers([lastViewController],
+                direction: .Forward,
+                animated: true,
+                completion: nil)
+        }
+    }
+    
+    
     
     private(set) lazy  var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController("SearchTable"),
@@ -39,10 +73,6 @@ class SearchPageController : UIPageViewController {
 
     
 }
-
-
-
-
 
 
 
@@ -67,6 +97,7 @@ extension SearchPageController : UIPageViewControllerDataSource {
                 return nil
             }
             
+            NSNotificationCenter.defaultCenter().postNotificationName(notification,object: self)
             return orderedViewControllers[previousIndex]
     }
     
@@ -86,7 +117,7 @@ extension SearchPageController : UIPageViewControllerDataSource {
             guard orderedViewControllersCount > nextIndex else {
                 return nil
             }
-            
+            NSNotificationCenter.defaultCenter().postNotificationName(notification,object: self)
             return orderedViewControllers[nextIndex]
     }
     

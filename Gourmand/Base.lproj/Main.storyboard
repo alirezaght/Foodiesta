@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A8H-KC-LKf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -88,6 +88,9 @@
                                     <segment title="Table"/>
                                     <segment title="Map"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="3XK-W7-bBd" eventType="valueChanged" id="beR-Ec-HQl"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85T-2k-Nyg">
                                 <rect key="frame" x="0.0" y="108" width="600" height="392"/>
@@ -120,6 +123,7 @@
                     <navigationItem key="navigationItem" id="P9a-cK-U1S"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="zBK-SL-kMr" id="4uf-3t-3cx"/>
+                        <outlet property="segmentedControl" destination="XL9-IB-QqG" id="fdb-gz-iA5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5x-YL-h90" userLabel="First Responder" sceneMemberID="firstResponder"/>
