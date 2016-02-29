@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		2791E6A9BB3F416029B3E4EA /* Pods_Gourmand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */; };
 		5510BCE53F35E55323F1E03F /* Pods_GourmandUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */; };
+		9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BD2251C832608009FC1E1 /* SearchPageController.swift */; };
 		9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */; };
-		9A6F684E1C6F01550020BFB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684D1C6F01550020BFB6 /* ViewController.swift */; };
+		9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684D1C6F01550020BFB6 /* LoginController.swift */; };
 		9A6F68511C6F01550020BFB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F684F1C6F01550020BFB6 /* Main.storyboard */; };
 		9A6F68541C6F01550020BFB6 /* Gourmand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F68521C6F01550020BFB6 /* Gourmand.xcdatamodeld */; };
 		9A6F68561C6F01550020BFB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F68551C6F01550020BFB6 /* Assets.xcassets */; };
@@ -31,6 +32,11 @@
 		9A74A49C1C707CC80006605D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74A49B1C707CC80006605D /* libz.tbd */; };
 		9A74A49E1C707CDD0006605D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A74A49D1C707CDD0006605D /* libsqlite3.tbd */; };
 		9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2B5E01C73121F0054AADC /* MapViewController.swift */; };
+		9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2EF1C82F62200470A3F /* SearchController.swift */; };
+		9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F11C82F63900470A3F /* HomeController.swift */; };
+		9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F31C82F64D00470A3F /* HistoryController.swift */; };
+		9AF7F2F61C82F66400470A3F /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F51C82F66400470A3F /* MyProfileController.swift */; };
+		9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F71C82F67400470A3F /* SettingController.swift */; };
 		DB0356C3D04F945F32840D97 /* Pods_GourmandTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D753141E2A6434BB5FA742 /* Pods_GourmandTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,9 +63,10 @@
 		194E20D26A0A8B8F5C1C38DB /* Pods-Gourmand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gourmand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gourmand/Pods-Gourmand.debug.xcconfig"; sourceTree = "<group>"; };
 		1E8F2858A6ACDD4B7B9B29D9 /* Pods-GourmandUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandUITests/Pods-GourmandUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DE0A63FB0BF259F105C50E5 /* Pods-GourmandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A5BD2251C832608009FC1E1 /* SearchPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		9A6F68481C6F01550020BFB6 /* Gourmand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A6F684D1C6F01550020BFB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A6F684D1C6F01550020BFB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9A6F68501C6F01550020BFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A6F68531C6F01550020BFB6 /* Gourmand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gourmand.xcdatamodel; sourceTree = "<group>"; };
 		9A6F68551C6F01550020BFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +102,11 @@
 		9AB7A7AC1C7C4A7400F7C0F6 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
 		9ABF7E411C7B2B3E0076D2D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9AC2B5E01C73121F0054AADC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9AF7F2EF1C82F62200470A3F /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		9AF7F2F11C82F63900470A3F /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		9AF7F2F31C82F64D00470A3F /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		9AF7F2F51C82F66400470A3F /* MyProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileController.swift; sourceTree = "<group>"; };
+		9AF7F2F71C82F67400470A3F /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gourmand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmandUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EA6623CB74DAE870509538 /* Pods-GourmandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,7 +246,13 @@
 			isa = PBXGroup;
 			children = (
 				9AC2B5E01C73121F0054AADC /* MapViewController.swift */,
-				9A6F684D1C6F01550020BFB6 /* ViewController.swift */,
+				9A6F684D1C6F01550020BFB6 /* LoginController.swift */,
+				9AF7F2EF1C82F62200470A3F /* SearchController.swift */,
+				9AF7F2F11C82F63900470A3F /* HomeController.swift */,
+				9AF7F2F31C82F64D00470A3F /* HistoryController.swift */,
+				9AF7F2F51C82F66400470A3F /* MyProfileController.swift */,
+				9AF7F2F71C82F67400470A3F /* SettingController.swift */,
+				9A5BD2251C832608009FC1E1 /* SearchPageController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -517,9 +535,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A6F684E1C6F01550020BFB6 /* ViewController.swift in Sources */,
+				9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */,
+				9AF7F2F61C82F66400470A3F /* MyProfileController.swift in Sources */,
+				9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */,
+				9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */,
 				9A6F68541C6F01550020BFB6 /* Gourmand.xcdatamodeld in Sources */,
+				9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */,
 				9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */,
+				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
+				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
 				9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

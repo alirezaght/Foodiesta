@@ -1,0 +1,93 @@
+//
+//  SearchPageController.swift
+//  Gourmand
+//
+//  Created by MacMini on 2/28/16.
+//  Copyright © 2016 MacMini. All rights reserved.
+//
+
+import Foundation
+
+import UIKit
+import tolo
+import SwiftEventBus
+
+class SearchPageController : UIPageViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource = self
+        
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                direction: .Forward,
+                animated: true,
+                completion: nil)
+                    }
+    }
+    
+    private(set) lazy  var orderedViewControllers: [UIViewController] = {
+        return [self.newColoredViewController("SearchTable"),
+            self.newColoredViewController("MapView")]
+    }()
+    
+    private func newColoredViewController(color: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewControllerWithIdentifier("\(color)")
+    }
+    
+
+    
+}
+
+
+
+
+
+
+
+
+// MARK: UIPageViewControllerDataSource
+
+extension SearchPageController : UIPageViewControllerDataSource {
+    
+    func pageViewController(pageViewController: UIPageViewController,
+        viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+            guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
+                return nil
+            }
+            
+            let previousIndex = viewControllerIndex - 1
+            
+            guard previousIndex >= 0 else {
+                return nil
+            }
+            
+            guard orderedViewControllers.count > previousIndex else {
+                return nil
+            }
+            
+            return orderedViewControllers[previousIndex]
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController,
+        viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+            guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
+                return nil
+            }
+            
+            let nextIndex = viewControllerIndex + 1
+            let orderedViewControllersCount = orderedViewControllers.count
+            
+            guard orderedViewControllersCount != nextIndex else {
+                return nil
+            }
+            
+            guard orderedViewControllersCount > nextIndex else {
+                return nil
+            }
+            
+            return orderedViewControllers[nextIndex]
+    }
+    
+}

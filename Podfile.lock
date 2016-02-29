@@ -31,6 +31,8 @@ PODS:
   - PayPal-iOS-SDK/CardIO (2.13.1):
     - CardIO (~> 5.3.1)
   - PayPal-iOS-SDK/Core (2.13.1)
+  - SwiftEventBus (1.1.0)
+  - tolo (1.0.0)
   - UberRides (0.3.1)
 
 DEPENDENCIES:
@@ -40,7 +42,18 @@ DEPENDENCIES:
   - ParseTwitterUtils
   - ParseUI
   - PayPal-iOS-SDK
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
+  - tolo (~> 1.0.0)
   - UberRides
+
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :commit: 4b8cbb5a8227b3c29af75e0416689d26178733d8
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
@@ -53,6 +66,8 @@ SPEC CHECKSUMS:
   ParseTwitterUtils: 8856ac80da50bbb0f0bcf251def20b62e1ae6bc4
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   PayPal-iOS-SDK: fc36f26c818d31b014044ec0b22c0861b2fe733f
+  SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
+  tolo: 906f6fe2943451e7354c694ce968d76ea344c01d
   UberRides: db7aead2e9c853fe481ac4dee03643fb274e884e
 
 COCOAPODS: 0.39.0

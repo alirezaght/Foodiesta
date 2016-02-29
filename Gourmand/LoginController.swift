@@ -11,7 +11,7 @@ import Parse
 import ParseFacebookUtilsV4
 import ParseTwitterUtils
 import ParseUI
-class ViewController: UIViewController {
+class LoginController: UIViewController {
  
     @IBOutlet weak var txtEmail: UITextField!
 	@IBOutlet weak var txtPass: UITextField!
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
 	}
     
     func signIn(){
-        self.performSegueWithIdentifier("signedin", sender: self)
+        self.performSegueWithIdentifier("SignedIn", sender: self)
 }
 
 	func updateTwitterUserInfo() {
