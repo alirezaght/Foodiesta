@@ -8,7 +8,7 @@
 
 import Foundation
 import GoogleMaps
-
+import Parse
 class MapViewController : UIViewController, CLLocationManagerDelegate {
 
 	@IBOutlet weak var mapView: GMSMapView!

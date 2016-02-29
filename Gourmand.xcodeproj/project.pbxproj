@@ -166,11 +166,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		843928511C81B35A0038E333 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				843928521C81B36E0038E333 /* Soap.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		843928561C82E5E40038E333 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				84409F241C82EB8800006808 /* AddressBar.swift */,
+				84409F261C83022C00006808 /* MPGTextField.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		9A6F683F1C6F01550020BFB6 = {
 			isa = PBXGroup;
 			children = (
-				9A74A49F1C707D380006605D /* lib */,
 				9A6F684A1C6F01550020BFB6 /* Gourmand */,
+				9A74A49F1C707D380006605D /* lib */,
 				9A6F68621C6F01560020BFB6 /* GourmandTests */,
 				9A6F686D1C6F01560020BFB6 /* GourmandUITests */,
 				9A6F68491C6F01550020BFB6 /* Products */,
@@ -192,6 +209,8 @@
 		9A6F684A1C6F01550020BFB6 /* Gourmand */ = {
 			isa = PBXGroup;
 			children = (
+				843928561C82E5E40038E333 /* Components */,
+				843928511C81B35A0038E333 /* WebService */,
 				9AC2B5E21C7319160054AADC /* Controller */,
 				9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */,
 				9A6F684F1C6F01550020BFB6 /* Main.storyboard */,
@@ -545,6 +564,9 @@
 				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
 				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
 				9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */,
+				843928551C81BB310038E333 /* CookRegisterViewController.swift in Sources */,
+				84409F251C82EB8800006808 /* AddressBar.swift in Sources */,
+				843928531C81B36E0038E333 /* Soap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
