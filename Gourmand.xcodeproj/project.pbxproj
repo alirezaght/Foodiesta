@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2791E6A9BB3F416029B3E4EA /* Pods_Gourmand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */; };
 		5510BCE53F35E55323F1E03F /* Pods_GourmandUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */; };
+		842553361C8431B500CF9D94 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553341C8431B500CF9D94 /* AddressBar.swift */; };
+		842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553351C8431B500CF9D94 /* MPGTextField.swift */; };
+		842553391C8431C000CF9D94 /* Soap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553381C8431C000CF9D94 /* Soap.swift */; };
 		9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BD2251C832608009FC1E1 /* SearchPageController.swift */; };
 		9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */; };
 		9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684D1C6F01550020BFB6 /* LoginController.swift */; };
@@ -63,6 +66,9 @@
 		194E20D26A0A8B8F5C1C38DB /* Pods-Gourmand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gourmand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gourmand/Pods-Gourmand.debug.xcconfig"; sourceTree = "<group>"; };
 		1E8F2858A6ACDD4B7B9B29D9 /* Pods-GourmandUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandUITests/Pods-GourmandUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DE0A63FB0BF259F105C50E5 /* Pods-GourmandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.debug.xcconfig"; sourceTree = "<group>"; };
+		842553341C8431B500CF9D94 /* AddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
+		842553351C8431B500CF9D94 /* MPGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGTextField.swift; sourceTree = "<group>"; };
+		842553381C8431C000CF9D94 /* Soap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soap.swift; sourceTree = "<group>"; };
 		9A5BD2251C832608009FC1E1 /* SearchPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		9A6F68481C6F01550020BFB6 /* Gourmand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +175,7 @@
 		843928511C81B35A0038E333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				843928521C81B36E0038E333 /* Soap.swift */,
+				842553381C8431C000CF9D94 /* Soap.swift */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -177,8 +183,8 @@
 		843928561C82E5E40038E333 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				84409F241C82EB8800006808 /* AddressBar.swift */,
-				84409F261C83022C00006808 /* MPGTextField.swift */,
+				842553341C8431B500CF9D94 /* AddressBar.swift */,
+				842553351C8431B500CF9D94 /* MPGTextField.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -554,19 +560,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842553361C8431B500CF9D94 /* AddressBar.swift in Sources */,
 				9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */,
+				842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */,
 				9AF7F2F61C82F66400470A3F /* MyProfileController.swift in Sources */,
 				9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */,
 				9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */,
 				9A6F68541C6F01550020BFB6 /* Gourmand.xcdatamodeld in Sources */,
 				9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */,
+				842553391C8431C000CF9D94 /* Soap.swift in Sources */,
 				9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */,
 				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
 				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
 				9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */,
-				843928551C81BB310038E333 /* CookRegisterViewController.swift in Sources */,
-				84409F251C82EB8800006808 /* AddressBar.swift in Sources */,
-				843928531C81B36E0038E333 /* Soap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
