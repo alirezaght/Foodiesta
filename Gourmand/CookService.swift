@@ -100,12 +100,8 @@ class CookService {
             return
         }
         let cook = PFObject(className: "Cook")
-        let userRelation = PFRelation()
-        userRelation.addObject(user)
-        cook["user"] = userRelation
-        let foodRelation = PFRelation()
-        foodRelation.addObject(food)
-        cook["food"] = foodRelation
+        cook.relationForKey("user").addObject(user)
+        cook.relationForKey("food").addObject(food)
         cook.saveInBackgroundWithBlock { (result, error) -> Void in
             if(error == nil){
                 completeHandler(result)
