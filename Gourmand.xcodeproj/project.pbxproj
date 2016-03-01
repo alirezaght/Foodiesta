@@ -12,6 +12,10 @@
 		842553361C8431B500CF9D94 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553341C8431B500CF9D94 /* AddressBar.swift */; };
 		842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553351C8431B500CF9D94 /* MPGTextField.swift */; };
 		842553391C8431C000CF9D94 /* Soap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553381C8431C000CF9D94 /* Soap.swift */; };
+		845EAC791C85708300419C66 /* LocalDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC781C85708300419C66 /* LocalDb.swift */; };
+		845EAC7C1C8582B000419C66 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC7B1C8582B000419C66 /* SearchService.swift */; };
+		845EAC801C85839800419C66 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC7F1C85839800419C66 /* Filter.swift */; };
+		84ADF1161C85B3E500B60E25 /* CookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADF1151C85B3E500B60E25 /* CookService.swift */; };
 		9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BD2251C832608009FC1E1 /* SearchPageController.swift */; };
 		9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */; };
 		9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684D1C6F01550020BFB6 /* LoginController.swift */; };
@@ -69,6 +73,10 @@
 		842553341C8431B500CF9D94 /* AddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
 		842553351C8431B500CF9D94 /* MPGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGTextField.swift; sourceTree = "<group>"; };
 		842553381C8431C000CF9D94 /* Soap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soap.swift; sourceTree = "<group>"; };
+		845EAC781C85708300419C66 /* LocalDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDb.swift; sourceTree = "<group>"; };
+		845EAC7B1C8582B000419C66 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		845EAC7F1C85839800419C66 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		84ADF1151C85B3E500B60E25 /* CookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookService.swift; sourceTree = "<group>"; };
 		9A5BD2251C832608009FC1E1 /* SearchPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		9A6F68481C6F01550020BFB6 /* Gourmand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +197,40 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		845EAC771C85705C00419C66 /* DBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				845EAC781C85708300419C66 /* LocalDb.swift */,
+			);
+			name = DBHelper;
+			sourceTree = "<group>";
+		};
+		845EAC7A1C85828400419C66 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84ADF1141C85B3D200B60E25 /* Cook Service */,
+				845EAC7D1C8582E200419C66 /* Search Service */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		845EAC7D1C8582E200419C66 /* Search Service */ = {
+			isa = PBXGroup;
+			children = (
+				845EAC7B1C8582B000419C66 /* SearchService.swift */,
+				845EAC7F1C85839800419C66 /* Filter.swift */,
+			);
+			name = "Search Service";
+			sourceTree = "<group>";
+		};
+		84ADF1141C85B3D200B60E25 /* Cook Service */ = {
+			isa = PBXGroup;
+			children = (
+				84ADF1151C85B3E500B60E25 /* CookService.swift */,
+			);
+			name = "Cook Service";
+			sourceTree = "<group>";
+		};
 		9A6F683F1C6F01550020BFB6 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +257,8 @@
 		9A6F684A1C6F01550020BFB6 /* Gourmand */ = {
 			isa = PBXGroup;
 			children = (
+				845EAC7A1C85828400419C66 /* Services */,
+				845EAC771C85705C00419C66 /* DBHelper */,
 				843928561C82E5E40038E333 /* Components */,
 				843928511C81B35A0038E333 /* WebService */,
 				9AC2B5E21C7319160054AADC /* Controller */,
@@ -567,12 +611,16 @@
 				9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */,
 				9A6F684E1C6F01550020BFB6 /* LoginController.swift in Sources */,
 				9A6F68541C6F01550020BFB6 /* Gourmand.xcdatamodeld in Sources */,
+				84ADF1161C85B3E500B60E25 /* CookService.swift in Sources */,
 				9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */,
 				842553391C8431C000CF9D94 /* Soap.swift in Sources */,
 				9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */,
 				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
 				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
+				845EAC7C1C8582B000419C66 /* SearchService.swift in Sources */,
+				845EAC801C85839800419C66 /* Filter.swift in Sources */,
 				9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */,
+				845EAC791C85708300419C66 /* LocalDb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
