@@ -38,8 +38,13 @@ class SearchService{
                 break
             }
         }
-        let query = PFQuery.orQueryWithSubqueries(catQ)
-        query.whereKey("objectId", matchesKey: "objectId", inQuery: PFQuery.orQueryWithSubqueries(ingQ))
+        var query = PFQuery()
+        if(catQ.count>0){
+            query = PFQuery.orQueryWithSubqueries(catQ)
+            if(ingQ.count>0){
+                query.whereKey("objectId", matchesKey: "objectId", inQuery: PFQuery.orQueryWithSubqueries(ingQ))
+            }
+        }
         query.whereKey("name", containsString: searchQuery)
         query.whereKey("name", containsString: searchQuery)
         query.orderByDescending("popularity").orderByDescending("rating")
