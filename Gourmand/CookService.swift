@@ -16,7 +16,7 @@ class CookService {
                 if(error == nil){
                     completeHandler(added)
                 }else{
-                    print("Could not add user as cook")
+                    print("Could not add user as cook "+error!.description)
                 }
             })
         }
@@ -26,10 +26,10 @@ class CookService {
         query.whereKey("location", nearGeoPoint: location, withinKilometers: withinKilometers)
         query.whereKey("isCook", equalTo: true)
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if(error != nil){
+            if(error == nil){
                 completeHandler(objects as? [PFUser])
             }else{
-                print("could not find cooks query = "+query.description)
+                print("could not find cooks query = "+error!.description)
             }
             
         }
@@ -43,7 +43,7 @@ class CookService {
             if (error == nil && objects != nil){
                 completeHandler(objects)
             }else{
-                print("could not find foods by cooks query = "+query.description)
+                print("could not find foods by cooks query = "+error!.description)
             }
         })
     }
@@ -81,7 +81,7 @@ class CookService {
                 })
                 completeHandler(foods)
             }else{
-                print("could not find foods by cooks query = "+query.description)
+                print("could not find foods by cooks query = "+error!.description)
             }
         })
     }

@@ -38,14 +38,13 @@ class SearchService{
                 break
             }
         }
-        var query = PFQuery()
+        var query = PFQuery(className: "Food")
         if(catQ.count>0){
             query = PFQuery.orQueryWithSubqueries(catQ)
             if(ingQ.count>0){
                 query.whereKey("objectId", matchesKey: "objectId", inQuery: PFQuery.orQueryWithSubqueries(ingQ))
             }
         }
-        query.whereKey("name", containsString: searchQuery)
         query.whereKey("name", containsString: searchQuery)
         query.orderByDescending("popularity").orderByDescending("rating")
         query.fromLocalDatastore()
@@ -54,7 +53,7 @@ class SearchService{
             {
                 completeHandler(objects)
             }else{
-                print("could not find objects with query = "+query.description)
+                print("could not find objects with query = "+error!.description)
             }
             
         }

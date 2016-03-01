@@ -118,6 +118,12 @@ class LoginController: UIViewController {
         PFUser.logInWithUsernameInBackground(txtEmail.text!, password:txtPass.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
+                let search = SearchService()
+                search.searchFood("Ghorme", completeHandler: { (objects) -> () in
+                    if(objects != nil){
+                        
+                    }
+                })
                 self.signIn()
                 // Do stuff after successful login.
             } else {
