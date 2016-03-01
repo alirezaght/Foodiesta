@@ -19,52 +19,6 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        do{
-            let foodCategoryQ : PFQuery = PFQuery(className: "FoodCategory")
-            let result = try foodCategoryQ.whereKey("objectId", equalTo: "x9rL5znKMg").getFirstObject()
-            
-            for i in 0...10{
-                
-                
-                
-                PFUser.logInWithUsernameInBackground("a\(i)@gmail.com", password: "12345") {
-                    (user: PFUser?, error: NSError?) -> Void in
-                    if user != nil {
-                        do{
-                            let user = PFUser.currentUser()!
-                            let photo = PFObject(className: "Photo")
-                            
-                            photo["image"] = PFFile(data: UIImagePNGRepresentation(UIImage(named: "food")!)!)
-                            let relUser = PFRelation()
-                            relUser.addObject(user)
-                            photo["user"] = relUser
-                            try photo.save()
-                            let food = PFObject(className: "Food")
-                            food["name"] = "Pizza\(i)"
-                            food["desc"] = "Pizza\(i) desc"
-                            let relCat = PFRelation()
-                            relCat.addObject(result)
-                            food["category"] = relCat
-                            food["producer"] = relUser
-                            try food.save()
-                            let relFood = PFRelation()
-                            relFood.addObject(food)
-                            photo["food"] = relFood
-                            try photo.save()
-                        }catch{
-                            print("catch 2")
-                        }
-                        
-                    } else {
-                        // The login failed. Check error to see why.
-                    }
-                }
-                
-                
-            }
-        }catch{
-            print("catch")
-        }
         //		let hello = NSLocalizedString("hello", comment: "hello")
         // Do any additional setup after loading the view, typically from a nib.
         
