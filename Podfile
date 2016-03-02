@@ -14,6 +14,7 @@ pod 'ParseTwitterUtils'
 pod 'ParseUI'
 pod 'tolo', '~>1.0.0'
 pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+pod 'MosaicUI'
 end
 
 target 'GourmandTests' do
@@ -26,6 +27,8 @@ pod 'ParseTwitterUtils'
 pod 'ParseUI'
 pod 'tolo', '~>1.0.0'
 pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+pod 'MosaicUI'
+
 end
 
 target 'GourmandUITests' do
@@ -38,5 +41,7 @@ pod 'ParseTwitterUtils'
 pod 'ParseUI'
 pod 'tolo', '~>1.0.0'
 pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+pod 'MosaicUI'
+
 end
 

@@ -13,13 +13,12 @@ import UberRides
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
 import ParseTwitterUtils
-
-
+import MosaicUI
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
 	var window: UIWindow?
     let localDb: LocalDb = LocalDb()
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

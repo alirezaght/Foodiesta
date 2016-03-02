@@ -77,6 +77,7 @@
 		845EAC7B1C8582B000419C66 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		845EAC7F1C85839800419C66 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		84ADF1151C85B3E500B60E25 /* CookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookService.swift; sourceTree = "<group>"; };
+		84ADF11E1C86F59100B60E25 /* MosaicUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MosaicUI.framework; path = "Pods/../build/Debug-iphoneos/MosaicUI.framework"; sourceTree = "<group>"; };
 		9A5BD2251C832608009FC1E1 /* SearchPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		9A6F68481C6F01550020BFB6 /* Gourmand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		ADAAD0757119C8AB69A9C319 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84ADF11E1C86F59100B60E25 /* MosaicUI.framework */,
 				9AB7A7AA1C7C496700F7C0F6 /* ParseTwitterUtils.framework */,
 				9ABF7E411C7B2B3E0076D2D4 /* Twitter.framework */,
 				A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */,
