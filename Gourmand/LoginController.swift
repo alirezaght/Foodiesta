@@ -114,7 +114,8 @@ class LoginController: UIViewController {
     }
     
     @IBAction func btnSignin(sender: UIButton) {
-        
+        txtEmail.text = "ehsan.fortuna@gmail.com"
+        txtPass.text = "12345"
         PFUser.logInWithUsernameInBackground(txtEmail.text!, password:txtPass.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {

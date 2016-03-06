@@ -12,37 +12,43 @@ class LocalDb{
     var shouldUpdateFromServer = true
     let expireHour = 1
     //MARK: functions
-    func syncQuery(className: String, completeHandler:()->()){
-        let localQuery = PFQuery(className: className)
+    func syncQuery(className: String, includeKeys: [String], completeHandler:()->()){
         let query = PFQuery(className: className)
-        localQuery.fromLocalDatastore()
-        localQuery.findObjectsInBackgroundWithBlock({(parseObject localObjects: [PFObject]?, error: NSError?) -> Void in
-            if(error == nil){
-                query.findObjectsInBackgroundWithBlock({( parseObjects: [PFObject]?, error: NSError?) -> Void in
+        for key in includeKeys{
+            query.includeKey(key)
+        }
+        query.findObjectsInBackgroundWithBlock({(parseObject localObjects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                print("Found \(localObjects!.count) parseObjects from server")
+                PFObject.pinAllInBackground(localObjects, withName: className, block: { (succeeded: Bool, error: NSError?) -> Void in
                     if error == nil {
-                        print("Found \(parseObjects!.count) parseObjects from server")
-                        // First, unpin all existing objects
-                        PFObject.unpinAllInBackground(localObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
-                            if error == nil {
-                                // Pin all the new objects
-                                PFObject.pinAllInBackground(parseObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
-                                    if error == nil {
-                                        // Once we've updated the local datastore, update the view with local datastore
-                                        completeHandler()
-                                        
-                                    } else {
-                                        print("Failed to pin objects")
-                                    }
-                                })
-                            }
-                        })
+                        completeHandler()
                     } else {
-                        print("Couldn't get objects")
+                        print("Failed to pin objects " + error!.description)
                     }
+                    // First, unpin all existing objects
+                    //                        PFObject.unpinAllInBackground(localObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
+                    //                            if error == nil {
+                    //                                // Pin all the new objects
+                    //                                PFObject.pinAllInBackground(parseObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
+                    //                                    if error == nil {
+                    //                                        // Once we've updated the local datastore, update the view with local datastore
+                    //                                        completeHandler()
+                    //
+                    //                                    } else {
+                    //                                        print("Failed to pin objects " + error!.description)
+                    //                                    }
+                    //                                })
+                    //                            }
+                    //                        })
                 })
+            } else {
+                print("Couldn't get objects " + error!.description)
             }
         })
+        
     }
+    
     
     
     
@@ -60,10 +66,10 @@ class LocalDb{
                         }
                     }
                     if(self.shouldUpdateFromServer){
-                        self.syncQuery("FoodCategory", completeHandler: {
-                            self.syncQuery("Ingredient", completeHandler: {
-                                self.syncQuery("Cook", completeHandler: {
-                                    self.syncQuery("Food", completeHandler: {
+                        self.syncQuery("FoodCategory", includeKeys: [], completeHandler: {
+                            self.syncQuery("Ingredient", includeKeys: [], completeHandler: {
+                                self.syncQuery("Cook", includeKeys: ["user", "food"], completeHandler: {
+                                    self.syncQuery("Food", includeKeys: ["category"], completeHandler: {
                                         self.shouldUpdateFromServer = false
                                         session!["lastUpdated"] = NSDate()
                                         session!.saveInBackground()

@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol MPGTextFieldDelegate{
     func dataForPopoverInTextField(textfield: MPGTextField) -> [Dictionary<String, AnyObject>]
-    
+    optional func textFieldEmpty(textField: MPGTextField)
     optional func textFieldDidEndEditing(textField: MPGTextField, withSelection data: Dictionary<String,AnyObject>)
     optional func textFieldShouldSelect(textField: MPGTextField) -> Bool
 }
@@ -69,6 +69,8 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
                     table.tableView.removeFromSuperview()
                     self.tableViewController = nil
                 }
+            }else{
+                mDelegate?.textFieldEmpty?(self)
             }
         }
     }
@@ -76,11 +78,11 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
     override func resignFirstResponder() -> Bool{
         UIView.animateWithDuration(0.3,
             animations: ({
-                self.tableViewController!.tableView.alpha = 0.0
+                self.tableViewController?.tableView.alpha = 0.0
             }),
             completion:{
                 (finished : Bool) in
-                self.tableViewController!.tableView.removeFromSuperview()
+                self.tableViewController?.tableView.removeFromSuperview()
                 self.tableViewController = nil
         })
         self.handleExit()

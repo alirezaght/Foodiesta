@@ -39,13 +39,18 @@ class SearchService{
             }
         }
         var query = PFQuery(className: "Food")
+//        query.includeKey("category")
         if(catQ.count>0){
             query = PFQuery.orQueryWithSubqueries(catQ)
             if(ingQ.count>0){
                 query.whereKey("objectId", matchesKey: "objectId", inQuery: PFQuery.orQueryWithSubqueries(ingQ))
             }
+        }else{
+            if(ingQ.count>0){
+                query.whereKey("objectId", matchesKey: "objectId", inQuery: PFQuery.orQueryWithSubqueries(ingQ))
+            }
         }
-        query.whereKey("name", containsString: searchQuery)
+        query.whereKey("name", matchesRegex: (".*"+searchQuery+".*"), modifiers: "i")
         query.orderByDescending("popularity").orderByDescending("rating")
         query.fromLocalDatastore()
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in

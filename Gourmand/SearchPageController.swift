@@ -34,6 +34,7 @@ class SearchPageController : UIPageViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectSecondPage", name: "select_map", object: nil)
         
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectFirstPage", name: "select_table", object: nil)
 
         

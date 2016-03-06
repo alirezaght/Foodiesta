@@ -15,8 +15,10 @@ class Filter{
     
     let type: Type
     let objectId: String
-    init(type: Type, objectId: String){
+    let name: String
+    init(type: Type, objectId: String, name: String){
         self.type = type
         self.objectId  = objectId
+        self.name = name
     }
 }

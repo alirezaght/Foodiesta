@@ -35,15 +35,29 @@ class CookService {
         }
         
     }
-    func findCooksByUsers(users:[PFUser], completeHandler: ([PFObject]?)->()){
+    func findCooksByFood(food:PFObject, completeHandler: ([PFObject]?)->()){
         let query = PFQuery(className: "Cook")
-        query.fromLocalDatastore()
-        query.whereKey("user", containedIn: users)
+        query.includeKey("food")
+        query.includeKey("user")
+        query.whereKey("food", equalTo: food)
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if (error == nil && objects != nil){
                 completeHandler(objects)
             }else{
-                print("could not find foods by cooks query = "+error!.description)
+                print("could not find cooks by foods query = "+error!.description)
+            }
+        })
+    }
+    func findCooksByUser(user:PFUser, completeHandler: ([PFObject]?)->()){
+        let query = PFQuery(className: "Cook")
+        query.fromLocalDatastore()
+        
+        query.whereKey("user", equalTo: user)
+        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if (error == nil && objects != nil){
+                completeHandler(objects)
+            }else{
+                print("could not find cooks by users query = "+error!.description)
             }
         })
     }
@@ -81,7 +95,7 @@ class CookService {
                 })
                 completeHandler(foods)
             }else{
-                print("could not find foods by cooks query = "+error!.description)
+                print("could not find foods by users query = "+error!.description)
             }
         })
     }
