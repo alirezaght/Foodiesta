@@ -11,10 +11,8 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
-pod 'ParseUI'
-pod 'tolo', '~>1.0.0'
-pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
-pod 'MosaicUI'
+
+
 end
 
 target 'GourmandTests' do
@@ -24,10 +22,8 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
-pod 'ParseUI'
-pod 'tolo', '~>1.0.0'
-pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
-pod 'MosaicUI'
+
+
 
 end
 
@@ -38,10 +34,7 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
-pod 'ParseUI'
-pod 'tolo', '~>1.0.0'
-pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
-pod 'MosaicUI'
+
 
 end
 
