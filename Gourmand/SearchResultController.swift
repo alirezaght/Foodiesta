@@ -48,12 +48,9 @@ class SearchResultController: UITableViewController {
                 let cook = cooks![indexPath.row]
                 let food = cook["food"] as! PFObject
                 let user = cook["user"] as! PFUser
-                let photoQuery = PFQuery(className: "Photo")
-                photoQuery.whereKey("food", equalTo: food)
-                let photo = try photoQuery.getFirstObject()
-                let file = photo["image"] as! PFFile
+                let file = cook["photo"] as! PFFile
                 let cookName = user["first_name"] as! String
-                let price = food["price"] as! Int
+                let price = cook["price"] as! Double
                 let foodName = food["name"] as! String
                 cell.foodName.text = foodName
                 cell.cookName.text = cookName

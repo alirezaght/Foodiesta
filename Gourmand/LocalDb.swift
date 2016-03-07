@@ -75,6 +75,7 @@ class LocalDb{
                                             PFObject.pinAllInBackground(objects, block: { (succeeded: Bool, error: NSError?) -> Void in
                                                 if error == nil {
                                                     self.shouldUpdateFromServer = false
+                                                    print("all pined.")
                                                     //  session!["lastUpdated"] = NSDate()
                                                     //  session!.saveInBackground()
                                                     

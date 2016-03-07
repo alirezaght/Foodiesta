@@ -40,6 +40,7 @@ class CookService {
         let query = PFQuery(className: "Cook")
         query.includeKey("food")
         query.includeKey("user")
+        query.fromLocalDatastore()
         query.whereKey("food", equalTo: food)
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if (error == nil && objects != nil){
@@ -51,8 +52,9 @@ class CookService {
     }
     func findCooksByUser(user:PFUser, completeHandler: ([PFObject]?)->()){
         let query = PFQuery(className: "Cook")
+        query.includeKey("food")
+        query.includeKey("user")
         query.fromLocalDatastore()
-        
         query.whereKey("user", equalTo: user)
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if (error == nil && objects != nil){
@@ -62,44 +64,7 @@ class CookService {
             }
         })
     }
-    func findFoodsByUsers(users:[PFUser], completeHandler: ([PFObject]?)->()){
-        var foods = [PFObject]()
-        let query = PFQuery(className: "Cook")
-        query.fromLocalDatastore()
-        query.whereKey("user", containedIn: users)
-        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            if (error == nil && objects != nil){
-                for cook in objects!{
-                    if let food = cook["food"] as? PFObject{
-                        foods.append(food)
-                    }
-                }
-                foods.sortInPlace({ (obj1, obj2) -> Bool in
-                    var pop1 = obj1["popularity"] as? Int
-                    if(pop1 == nil){
-                        pop1 = 0
-                    }
-                    var pop2 = obj2["popularity"] as? Int
-                    if(pop2 == nil){
-                        pop2 = 0
-                    }
-                    var rate1 = obj1["rating"] as? Int
-                    if(rate1 == nil){
-                        rate1 = 0
-                    }
-                    var rate2 = obj2["rating"] as? Int
-                    if(rate2 == nil){
-                        rate2 = 0
-                    }
-                    return pop1!+rate1! > pop2!+rate2!
-                    
-                })
-                completeHandler(foods)
-            }else{
-                print("could not find foods by users query = "+error!.description)
-            }
-        })
-    }
+    
     
     func userCooks(user: PFUser, food: PFObject, completeHandler: (Bool)->()){
         guard user["isCook"] as? Bool == true else{

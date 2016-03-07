@@ -54,7 +54,7 @@ class SearchBar: MPGTextField, MPGTextFieldDelegate{
             }
             
         }
-        return []
+        return super.data
         
     }
     func textFieldDidEndEditing(textField: MPGTextField, withSelection data: Dictionary<String, AnyObject>) {

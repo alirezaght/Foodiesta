@@ -10,8 +10,8 @@
 		2791E6A9BB3F416029B3E4EA /* Pods_Gourmand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57CBA013C1C71460DD7D007 /* Pods_Gourmand.framework */; };
 		5510BCE53F35E55323F1E03F /* Pods_GourmandUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */; };
 		842553361C8431B500CF9D94 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553341C8431B500CF9D94 /* AddressBar.swift */; };
-		842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553351C8431B500CF9D94 /* MPGTextField.swift */; };
 		842553391C8431C000CF9D94 /* Soap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553381C8431C000CF9D94 /* Soap.swift */; };
+		8439E56B1C8DBE98000284D7 /* MPGTextField-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439E56A1C8DBE98000284D7 /* MPGTextField-Swift.swift */; };
 		845EAC791C85708300419C66 /* LocalDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC781C85708300419C66 /* LocalDb.swift */; };
 		845EAC7C1C8582B000419C66 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC7B1C8582B000419C66 /* SearchService.swift */; };
 		845EAC801C85839800419C66 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EAC7F1C85839800419C66 /* Filter.swift */; };
@@ -93,10 +93,10 @@
 		1E8F2858A6ACDD4B7B9B29D9 /* Pods-GourmandUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandUITests/Pods-GourmandUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DE0A63FB0BF259F105C50E5 /* Pods-GourmandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.debug.xcconfig"; sourceTree = "<group>"; };
 		842553341C8431B500CF9D94 /* AddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
-		842553351C8431B500CF9D94 /* MPGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGTextField.swift; sourceTree = "<group>"; };
 		842553381C8431C000CF9D94 /* Soap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soap.swift; sourceTree = "<group>"; };
 		8439E55E1C8D5960000284D7 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
 		8439E55F1C8D66D9000284D7 /* autoIncrementBuildNumber.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = autoIncrementBuildNumber.sh; sourceTree = "<group>"; };
+		8439E56A1C8DBE98000284D7 /* MPGTextField-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPGTextField-Swift.swift"; sourceTree = "<group>"; };
 		845EAC781C85708300419C66 /* LocalDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDb.swift; sourceTree = "<group>"; };
 		845EAC7B1C8582B000419C66 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		845EAC7F1C85839800419C66 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -245,8 +245,8 @@
 		843928561C82E5E40038E333 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8439E56A1C8DBE98000284D7 /* MPGTextField-Swift.swift */,
 				842553341C8431B500CF9D94 /* AddressBar.swift */,
-				842553351C8431B500CF9D94 /* MPGTextField.swift */,
 				8498B2DE1C8AB5DD009A433E /* SearchOptionCell.swift */,
 				8498B2E01C8AC85E009A433E /* SearchBar.swift */,
 				8498B2E41C8B16F4009A433E /* SearchResultCell.swift */,
@@ -806,7 +806,6 @@
 				842553361C8431B500CF9D94 /* AddressBar.swift in Sources */,
 				9AF40C811C8C46690005DC9D /* HomeViewDataSet.m in Sources */,
 				9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */,
-				842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */,
 				9AF7F2F61C82F66400470A3F /* MyProfileController.swift in Sources */,
 				9AF40C5E1C8C40F00005DC9D /* MosaicData.m in Sources */,
 				9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */,
@@ -829,6 +828,7 @@
 				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
 				845EAC7C1C8582B000419C66 /* SearchService.swift in Sources */,
 				845EAC801C85839800419C66 /* Filter.swift in Sources */,
+				8439E56B1C8DBE98000284D7 /* MPGTextField-Swift.swift in Sources */,
 				9AC2B5E11C73121F0054AADC /* MapViewController.swift in Sources */,
 				845EAC791C85708300419C66 /* LocalDb.swift in Sources */,
 			);

@@ -194,7 +194,7 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
         var filteredData = data.filter({
             if let match : AnyObject  = $0["DisplayText"]{
                 //println("LCS = \(filter.lowercaseString)")
-                return (match as! NSString).lowercaseString.hasPrefix((filter as NSString).lowercaseString)
+                return (match as! NSString).lowercaseString.containsString((filter as NSString).lowercaseString)
             }
             else{
                 return false
