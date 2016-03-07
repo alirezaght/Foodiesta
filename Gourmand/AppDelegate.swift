@@ -13,7 +13,6 @@ import UberRides
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
 import ParseTwitterUtils
-import MosaicUI
 
 
 @UIApplicationMain

@@ -10,7 +10,6 @@ import UIKit
 import Parse
 import ParseFacebookUtilsV4
 import ParseTwitterUtils
-import ParseUI
 class LoginController: UIViewController {
     
     @IBOutlet weak var txtEmail: UITextField!
