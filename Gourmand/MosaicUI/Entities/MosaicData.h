@@ -11,6 +11,7 @@
 @interface MosaicData : NSObject{
     NSString *imageFilename;
     NSString *title;
+    NSString *price ;
     NSInteger size;
 }
 
@@ -19,5 +20,6 @@
 @property (strong) NSString *imageFilename;
 @property (strong) NSString *title;
 @property (readwrite) NSInteger size;
+@property (strong) NSString *price ; 
 
 @end

@@ -15,11 +15,15 @@
 @interface MosaicDataView : UIView <UIGestureRecognizerDelegate>{
     UIImageView *imageView;
     UILabel *titleLabel;
+    UILabel *priceLabel;
+    UIView *uiview ; 
     MosaicData *module;
 }
 
 @property (strong) NSString *title;
 @property (strong) MosaicData *module;
 @property (weak) MosaicView *mosaicView;
+
+
 
 @end

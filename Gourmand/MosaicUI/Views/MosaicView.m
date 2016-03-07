@@ -10,7 +10,7 @@
 #import "MosaicData.h"
 #import "MosaicDataView.h"
 
-#define kModuleSizeInPoints_iPhone 80
+#define kModuleSizeInPoints_iPhone 110
 #define kModuleSizeInPoints_iPad 128
 #define kMaxScrollPages_iPhone 4
 #define kMaxScrollPages_iPad 4
@@ -24,9 +24,12 @@
     _maxElementsX = -1;
     _maxElementsY = -1;
     
+    
+    
+    
     //  Add scrollview and set its position and size using autolayout constraints
     scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    scrollView.backgroundColor = [UIColor blackColor];
+    scrollView.backgroundColor = [UIColor whiteColor];
     [self addSubview:scrollView];    
 }
 
@@ -140,7 +143,7 @@
 }
 
 - (NSInteger)moduleSizeInPoints{
-    NSInteger retVal = kModuleSizeInPoints_iPhone;
+    NSInteger retVal = self.frame.size.width / 4   ; ///kModuleSizeInPoints_iPhone;
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
         retVal = kModuleSizeInPoints_iPad;

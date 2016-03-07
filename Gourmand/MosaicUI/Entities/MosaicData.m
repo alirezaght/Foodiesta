@@ -17,6 +17,7 @@
         self.imageFilename = [aDict objectForKey:@"imageFilename"];
         self.size = [[aDict objectForKey:@"size"] integerValue];
         self.title = [aDict objectForKey:@"title"];
+        self.price = @"10.99" ;
     }
     return self;
 }

@@ -59,6 +59,8 @@
 		9AF40C751C8C418D0005DC9D /* 008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AF40C6B1C8C418D0005DC9D /* 008.jpg */; };
 		9AF40C761C8C418D0005DC9D /* 009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AF40C6C1C8C418D0005DC9D /* 009.jpg */; };
 		9AF40C771C8C418D0005DC9D /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AF40C6D1C8C418D0005DC9D /* data.json */; };
+		9AF40C7D1C8C463D0005DC9D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF40C7C1C8C463D0005DC9D /* HomeViewController.m */; };
+		9AF40C811C8C46690005DC9D /* HomeViewDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF40C801C8C46690005DC9D /* HomeViewDataSet.m */; };
 		9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2EF1C82F62200470A3F /* SearchController.swift */; };
 		9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F11C82F63900470A3F /* HomeController.swift */; };
 		9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF7F2F31C82F64D00470A3F /* HistoryController.swift */; };
@@ -163,6 +165,10 @@
 		9AF40C6B1C8C418D0005DC9D /* 008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 008.jpg; sourceTree = "<group>"; };
 		9AF40C6C1C8C418D0005DC9D /* 009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 009.jpg; sourceTree = "<group>"; };
 		9AF40C6D1C8C418D0005DC9D /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		9AF40C7B1C8C461E0005DC9D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9AF40C7C1C8C463D0005DC9D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9AF40C7F1C8C46580005DC9D /* HomeViewDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewDataSet.h; sourceTree = "<group>"; };
+		9AF40C801C8C46690005DC9D /* HomeViewDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewDataSet.m; sourceTree = "<group>"; };
 		9AF7F2EF1C82F62200470A3F /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		9AF7F2F11C82F63900470A3F /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		9AF7F2F31C82F64D00470A3F /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
@@ -375,10 +381,10 @@
 		9AC2B5E21C7319160054AADC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9AF40C781C8C45BC0005DC9D /* Home */,
 				9AC2B5E01C73121F0054AADC /* MapViewController.swift */,
 				9A6F684D1C6F01550020BFB6 /* LoginController.swift */,
 				9AF7F2EF1C82F62200470A3F /* SearchController.swift */,
-				9AF7F2F11C82F63900470A3F /* HomeController.swift */,
 				9AF7F2F31C82F64D00470A3F /* HistoryController.swift */,
 				9AF7F2F51C82F66400470A3F /* MyProfileController.swift */,
 				9AF7F2F71C82F67400470A3F /* SettingController.swift */,
@@ -461,6 +467,34 @@
 				9AF40C6C1C8C418D0005DC9D /* 009.jpg */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		9AF40C781C8C45BC0005DC9D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9AF40C7A1C8C45F40005DC9D /* dataset */,
+				9AF40C791C8C45EB0005DC9D /* controller */,
+				9AF7F2F11C82F63900470A3F /* HomeController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		9AF40C791C8C45EB0005DC9D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF40C7B1C8C461E0005DC9D /* HomeViewController.h */,
+				9AF40C7C1C8C463D0005DC9D /* HomeViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		9AF40C7A1C8C45F40005DC9D /* dataset */ = {
+			isa = PBXGroup;
+			children = (
+				9AF40C7F1C8C46580005DC9D /* HomeViewDataSet.h */,
+				9AF40C801C8C46690005DC9D /* HomeViewDataSet.m */,
+			);
+			name = dataset;
 			sourceTree = "<group>";
 		};
 		ADAAD0757119C8AB69A9C319 /* Frameworks */ = {
@@ -754,6 +788,7 @@
 			files = (
 				8498B2DF1C8AB5DD009A433E /* SearchOptionCell.swift in Sources */,
 				842553361C8431B500CF9D94 /* AddressBar.swift in Sources */,
+				9AF40C811C8C46690005DC9D /* HomeViewDataSet.m in Sources */,
 				9AF7F2F01C82F62200470A3F /* SearchController.swift in Sources */,
 				842553371C8431B500CF9D94 /* MPGTextField.swift in Sources */,
 				9AF7F2F61C82F66400470A3F /* MyProfileController.swift in Sources */,
@@ -771,6 +806,7 @@
 				9AF7F2F41C82F64D00470A3F /* HistoryController.swift in Sources */,
 				9AF40C5F1C8C40F00005DC9D /* TwoDimentionalArray.m in Sources */,
 				842553391C8431C000CF9D94 /* Soap.swift in Sources */,
+				9AF40C7D1C8C463D0005DC9D /* HomeViewController.m in Sources */,
 				9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */,
 				8498B2E11C8AC85E009A433E /* SearchBar.swift in Sources */,
 				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
@@ -950,6 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "917a37a0-ae07-4420-90d5-16ca704e7f72";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -975,6 +1012,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.farazpardazan.gourmand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "917a37a0-ae07-4420-90d5-16ca704e7f72";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Gourmand/Gourmand-Bridging-Header.h";
 			};
 			name = Release;

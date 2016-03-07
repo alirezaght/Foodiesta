@@ -22,19 +22,19 @@
     
     switch (aSize) {
         case 0:
-            retVal = [UIFont fontWithName:kMosaicDataViewFont size:36];
+            retVal = [UIFont fontWithName:kMosaicDataViewFont size:10];
             break;
         case 1:
-            retVal = [UIFont fontWithName:kMosaicDataViewFont size:18];
+            retVal = [UIFont fontWithName:kMosaicDataViewFont size:10];
             break;
         case 2:
-            retVal = [UIFont fontWithName:kMosaicDataViewFont size:18];
+            retVal = [UIFont fontWithName:kMosaicDataViewFont size:10];
             break;
         case 3:
-            retVal = [UIFont fontWithName:kMosaicDataViewFont size:15];
+            retVal = [UIFont fontWithName:kMosaicDataViewFont size:10];
             break;
         default:
-            retVal = [UIFont fontWithName:kMosaicDataViewFont size:15];
+            retVal = [UIFont fontWithName:kMosaicDataViewFont size:10];
             break;
     }
     
@@ -55,6 +55,8 @@
     return retVal;
 }
 
+ 
+
 -(void)setTitle:(NSString *)title{
     titleLabel.text = title;
 }
@@ -64,6 +66,10 @@
     
     UIImage *anImage = [UIImage imageNamed:self.module.imageFilename];
     imageView.image = anImage;
+ 
+    
+    
+    
     
     CGSize imgFinalSize = CGSizeZero;
 
@@ -91,22 +97,40 @@
     
 //    NSLog(@"#DEBUG imageRect %.2f %.2f (%.2f %.2f) %@", imgFinalSize.width, imgFinalSize.height, anImage.size.width, anImage.size.height, newModule);
     
-    imageView.frame = CGRectMake(0, 0, imgFinalSize.width, imgFinalSize.height);
+    imageView.frame = CGRectMake(0, 0, imgFinalSize.width , imgFinalSize.height );
     imageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     
     //  Set new title
-    NSInteger marginLeft = self.frame.size.width / 20;
-    NSInteger marginBottom = self.frame.size.height / 20;
+//    NSInteger marginLeft = self.frame.size.width / 20;
+//    NSInteger marginBottom = self.frame.size.height / 20;
     
     titleLabel.text = module.title;
     titleLabel.font = [self fontWithModuleSize:module.size];
     
+    
+    priceLabel.text = module.price;
+    priceLabel.font = [self fontWithModuleSize:module.size];
+
+    
+    CGSize priceSize = [module.price sizeWithFont:priceLabel.font constrainedToSize:priceLabel.frame.size];
+    CGRect priceRect = CGRectMake(self.frame.size.width - priceSize.width - 5 , self.frame.size.height - 20 , priceSize.width, 20);
+    priceLabel.frame = priceRect ;
+    
+    
     CGSize newSize = [module.title sizeWithFont:titleLabel.font constrainedToSize:titleLabel.frame.size];
-    CGRect newRect = CGRectMake(marginLeft,
-                                self.frame.size.height - newSize.height - marginBottom,
+    if (newSize.width > self.frame.size.width  / 2 ) {
+        newSize.width = self.frame.size.width  / 2 ;
+    }
+    CGRect newRect = CGRectMake(5,
+                                self.frame.size.height - 20 ,
                                 newSize.width,
-                                newSize.height);
+                                20);
     titleLabel.frame = newRect;
+    
+    
+    uiview.frame =  CGRectMake( 0  , self.frame.size.height - 20 , imgFinalSize.width, 20);
+    uiview.backgroundColor = [UIColor blackColor] ;
+
 }
 
 -(MosaicData *)module{
@@ -160,17 +184,34 @@
         CGRect imageViewFrame = CGRectMake(0,0,frame.size.width,frame.size.height);
         imageView = [[UIImageView alloc] initWithFrame:imageViewFrame];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        uiview = [[UIView alloc] initWithFrame:imageViewFrame];
+        uiview.alpha = 0.6;
+        
+        
+        
         [self addSubview:imageView];
+        [self addSubview:uiview];
+      
+        
+      
         
         //  UILabel for title
         CGRect titleLabelFrame = CGRectMake(0,
                                        round(frame.size.height/2),
                                        frame.size.width,
                                        round(frame.size.height/2));
+        
+        
+        priceLabel = [[UILabel alloc] initWithFrame:titleLabelFrame];
+        priceLabel.textColor  = [UIColor whiteColor];
+        priceLabel.textAlignment = NSTextAlignmentRight;
+        [self addSubview:priceLabel];
+        
         titleLabel = [[UILabel alloc] initWithFrame:titleLabelFrame];
-        titleLabel.textAlignment = NSTextAlignmentRight;
+        titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.font = [UIFont fontWithName:kMosaicDataViewFont size:15];
+        titleLabel.font = [UIFont fontWithName:kMosaicDataViewFont size:10];
         titleLabel.textColor = [UIColor whiteColor];
         titleLabel.shadowColor = [UIColor blackColor];
         titleLabel.shadowOffset = CGSizeMake(0, 1);
@@ -178,8 +219,8 @@
         [self addSubview:titleLabel];
 
         //  Set stroke width
-        self.layer.borderWidth = 1;
-        self.layer.borderColor = [UIColor blackColor].CGColor;
+        self.layer.borderWidth = 2;
+        self.layer.borderColor = [UIColor whiteColor].CGColor;
         self.clipsToBounds = YES;
         
         //  Subscribe to a Notification so can unhighlight when user taps other MosaicDataViews
