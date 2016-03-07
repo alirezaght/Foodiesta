@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 class SearchResultController: UITableViewController {
     
     @IBOutlet weak var searchTableView: UITableView!
@@ -51,13 +52,17 @@ class SearchResultController: UITableViewController {
                 photoQuery.whereKey("food", equalTo: food)
                 let photo = try photoQuery.getFirstObject()
                 let file = photo["image"] as! PFFile
-                let cookName = user["name"] as! String
-                let price = food["price"] as! String
+                let cookName = user["first_name"] as! String
+                let price = food["price"] as! Int
                 let foodName = food["name"] as! String
                 cell.foodName.text = foodName
                 cell.cookName.text = cookName
-                cell.foodPrice.text = price
-                cell.imageView?.image = UIImage(data: try file.getData())
+                cell.foodPrice.text = String(price)
+                let image = UIImage(data: try file.getData(), scale: 0)
+                cell.imageView?.clipsToBounds = true
+                cell.imageView?.image = image
+                	
+                
                 
             }catch{
                 

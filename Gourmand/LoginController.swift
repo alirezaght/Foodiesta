@@ -55,7 +55,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func twitterSignIn(sender: AnyObject) {
-        
+        PFUser.logOut()
         PFTwitterUtils.logInWithBlock {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
@@ -76,7 +76,7 @@ class LoginController: UIViewController {
     
     @IBAction func btnSignUp(sender: AnyObject) {
         
-        
+        PFUser.logOut()
         let user = PFUser()
         user.username = txtEmail.text
         user.password = txtPass.text
@@ -95,7 +95,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func facebookSignIn(sender: AnyObject) {
-        
+        PFUser.logOut()
         PFFacebookUtils.logInInBackgroundWithReadPermissions(["email", "user_friends"]) {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
@@ -116,6 +116,7 @@ class LoginController: UIViewController {
     @IBAction func btnSignin(sender: UIButton) {
         txtEmail.text = "ehsan.fortuna@gmail.com"
         txtPass.text = "12345"
+        PFUser.logOut()
         PFUser.logInWithUsernameInBackground(txtEmail.text!, password:txtPass.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
@@ -128,6 +129,7 @@ class LoginController: UIViewController {
     }
     
     func signIn(){
+        
         self.performSegueWithIdentifier("SignedIn", sender: self)
     }
     
