@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 class SearchBar: MPGTextField, MPGTextFieldDelegate{
     var filters = [Filter]()
     var filterDelegate : (()->[Filter])?
@@ -30,14 +31,16 @@ class SearchBar: MPGTextField, MPGTextFieldDelegate{
                 if(objects != nil){
                     var result = [Dictionary<String, AnyObject>]()
                     for obj in objects!{
-                        
-                        var dict = [String:AnyObject]()
-                        dict["DisplayText"] = obj["name"] as! String
-                        let category = obj["category"] as! PFObject
-                        dict["DisplaySubText"] = category["name"] as! String
-                        dict["CustomObject"] = obj
-                        result.append(dict)
-                        
+                        do{
+                            var dict = [String:AnyObject]()
+                            dict["DisplayText"] = obj["name"] as! String
+                            let category = obj["category"] as! PFObject
+                            dict["DisplaySubText"] = category["name"] as! String
+                            dict["CustomObject"] = obj
+                            result.append(dict)
+                        }catch{
+                            print("could not fetch group")
+                        }
                         
                     }
                     super.data = result

@@ -141,7 +141,7 @@
         <scene sceneID="Vn7-cK-wMR">
             <objects>
                 <tableViewController storyboardIdentifier="SearchTable" title="SearchTable" id="sQ3-cV-Oic" customClass="SearchResultController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="odh-M2-1kR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="odh-M2-1kR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,6 +153,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKg-f7-7N1">
+                                            <rect key="frame" x="8" y="8" width="584" height="333"/>
+                                            <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                        </imageView>
                                         <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91v-oL-i00">
                                             <rect key="frame" x="8" y="305" width="584" height="36"/>
                                             <subviews>
@@ -246,10 +250,6 @@
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKg-f7-7N1">
-                                            <rect key="frame" x="8" y="8" width="584" height="333"/>
-                                            <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XKg-f7-7N1" firstAttribute="bottom" secondItem="ELe-MO-JDe" secondAttribute="bottomMargin" id="Sc2-fK-iXf"/>

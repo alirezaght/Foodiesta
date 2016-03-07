@@ -95,6 +95,7 @@
 		842553341C8431B500CF9D94 /* AddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
 		842553351C8431B500CF9D94 /* MPGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGTextField.swift; sourceTree = "<group>"; };
 		842553381C8431C000CF9D94 /* Soap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soap.swift; sourceTree = "<group>"; };
+		8439E55E1C8D5960000284D7 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
 		845EAC781C85708300419C66 /* LocalDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDb.swift; sourceTree = "<group>"; };
 		845EAC7B1C8582B000419C66 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		845EAC7F1C85839800419C66 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 		9A74A49B1C707CC80006605D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9A74A49D1C707CDD0006605D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9AB7A7AA1C7C496700F7C0F6 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = "Pods/../build/Debug-iphoneos/ParseTwitterUtils.framework"; sourceTree = "<group>"; };
-		9AB7A7AC1C7C4A7400F7C0F6 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
 		9ABF7E411C7B2B3E0076D2D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9AC2B5E01C73121F0054AADC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9AF40C511C8C40F00005DC9D /* MosaicData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicData.h; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 				9A6F685A1C6F01550020BFB6 /* Info.plist */,
 				9A6F68521C6F01550020BFB6 /* Gourmand.xcdatamodeld */,
 				9A6F68881C6F3FFA0020BFB6 /* Localizable.strings */,
-				9AB7A7AC1C7C4A7400F7C0F6 /* Gourmand-Bridging-Header.h */,
+				8439E55E1C8D5960000284D7 /* Gourmand-Bridging-Header.h */,
 			);
 			path = Gourmand;
 			sourceTree = "<group>";

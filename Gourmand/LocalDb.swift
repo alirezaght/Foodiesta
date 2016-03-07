@@ -7,41 +7,21 @@
 //
 
 import Foundation
+import Parse
 class LocalDb{
     //MARK: properties
     var shouldUpdateFromServer = true
     let expireHour = 1
     //MARK: functions
-    func syncQuery(className: String, includeKeys: [String], completeHandler:()->()){
+    func getObjects(className: String, includeKeys: [String], completeHandler:([PFObject]?)->()){
         let query = PFQuery(className: className)
         for key in includeKeys{
             query.includeKey(key)
         }
-        query.findObjectsInBackgroundWithBlock({(parseObject localObjects: [PFObject]?, error: NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock({(parseObjects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
-                print("Found \(localObjects!.count) parseObjects from server")
-                PFObject.pinAllInBackground(localObjects, withName: className, block: { (succeeded: Bool, error: NSError?) -> Void in
-                    if error == nil {
-                        completeHandler()
-                    } else {
-                        print("Failed to pin objects " + error!.description)
-                    }
-                    // First, unpin all existing objects
-                    //                        PFObject.unpinAllInBackground(localObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
-                    //                            if error == nil {
-                    //                                // Pin all the new objects
-                    //                                PFObject.pinAllInBackground(parseObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
-                    //                                    if error == nil {
-                    //                                        // Once we've updated the local datastore, update the view with local datastore
-                    //                                        completeHandler()
-                    //
-                    //                                    } else {
-                    //                                        print("Failed to pin objects " + error!.description)
-                    //                                    }
-                    //                                })
-                    //                            }
-                    //                        })
-                })
+                print("Found \(parseObjects!.count) parseObjects from server")
+                completeHandler(parseObjects)
             } else {
                 print("Couldn't get objects " + error!.description)
             }
@@ -66,13 +46,59 @@ class LocalDb{
                         }
                     }
                     if(self.shouldUpdateFromServer){
-                        self.syncQuery("FoodCategory", includeKeys: [], completeHandler: {
-                            self.syncQuery("Ingredient", includeKeys: [], completeHandler: {
-                                self.syncQuery("Cook", includeKeys: ["user", "food"], completeHandler: {
-                                    self.syncQuery("Food", includeKeys: ["category"], completeHandler: {
-                                        self.shouldUpdateFromServer = false
-                                        session!["lastUpdated"] = NSDate()
-                                        session!.saveInBackground()
+                        self.getObjects("FoodCategory", includeKeys: [], completeHandler: { categories -> Void in
+                            self.getObjects("Ingredient", includeKeys: [], completeHandler: { ingredients -> Void in
+                                self.getObjects("Cook", includeKeys: ["user", "food"], completeHandler: { cooks -> Void in
+                                    self.getObjects("Food", includeKeys: ["category"], completeHandler: { foods -> Void in
+                                        var objects = [PFObject]()
+                                        if(categories != nil){
+                                            for cat in categories!{
+                                                objects.append(cat)
+                                            }
+                                        }
+                                        if(ingredients != nil){
+                                            for ing in ingredients!{
+                                                objects.append(ing)
+                                            }
+                                        }
+                                        if(cooks != nil){
+                                            for cook in cooks!{
+                                                objects.append(cook)
+                                            }
+                                        }
+                                        if(foods != nil){
+                                            for food in foods!{
+                                                objects.append(food)
+                                            }
+                                        }
+                                        PFObject.unpinAllObjectsInBackgroundWithBlock({ (succeeded, error) -> Void in
+                                            PFObject.pinAllInBackground(objects, block: { (succeeded: Bool, error: NSError?) -> Void in
+                                                if error == nil {
+                                                    self.shouldUpdateFromServer = false
+                                                    //  session!["lastUpdated"] = NSDate()
+                                                    //  session!.saveInBackground()
+                                                    
+                                                } else {
+                                                    print("Failed to pin objects " + error!.description)
+                                                }
+                                                // First, unpin all existing objects
+                                                //                        PFObject.unpinAllInBackground(localObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
+                                                //                            if error == nil {
+                                                //                                // Pin all the new objects
+                                                //                                PFObject.pinAllInBackground(parseObjects, block: { (succeeded: Bool, error: NSError?) -> Void in
+                                                //                                    if error == nil {
+                                                //                                        // Once we've updated the local datastore, update the view with local datastore
+                                                //                                        completeHandler()
+                                                //
+                                                //                                    } else {
+                                                //                                        print("Failed to pin objects " + error!.description)
+                                                //                                    }
+                                                //                                })
+                                                //                            }
+                                                //                        })
+                                            })
+                                        })
+                                        
                                     })
                                 })
                             })

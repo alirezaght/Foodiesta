@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 class SearchService{
     var filters: [Filter]
     convenience init(){
@@ -39,7 +40,7 @@ class SearchService{
             }
         }
         var query = PFQuery(className: "Food")
-//        query.includeKey("category")
+        query.includeKey("category")
         if(catQ.count>0){
             query = PFQuery.orQueryWithSubqueries(catQ)
             if(ingQ.count>0){

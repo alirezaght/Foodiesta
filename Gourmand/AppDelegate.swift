@@ -30,7 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		Parse.enableLocalDatastore()
 		Parse.setApplicationId("f6mOZjjJR5minHQGICj4QrgkCXrpJCQmXN7q6rHr", clientKey: "DFrYBedHPascmhhXDkTB5Z2zjZ0gLEAMRNOTG1kf")
-        
+        PFUser.enableRevocableSessionInBackgroundWithBlock { (error) -> Void in
+            if (error != nil) {
+                print(error?.localizedDescription)
+            }
+        }
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions);
         
         PFTwitterUtils.initializeWithConsumerKey("LLnB52Pqts4oMPQpst7Ivl4Z0",  consumerSecret:"G7dm11TT9PLg4k9uyegazb0X2tonpPHlFShIuc0xaw4iBrEqEW")
@@ -38,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 		PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
-		return true
+		return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 	}
     
     func application(application: UIApplication,

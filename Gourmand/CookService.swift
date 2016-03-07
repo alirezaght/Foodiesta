@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 class CookService {
     func addUserAsCook(user: PFUser, completeHandler: (Bool)->()){
         let isCook = user["isCook"] as? Bool
