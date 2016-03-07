@@ -9,8 +9,6 @@
 import Foundation
 
 import UIKit
-import tolo
-import SwiftEventBus
 
 let notification = "pagechangedinpageviewcontroller"
 
