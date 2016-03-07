@@ -23,7 +23,7 @@
                                                                 error:&anError];
     
     for (NSDictionary *aModuleDict in parsedElements){
-        MosaicData *aMosaicModule = [[MosaicData alloc] initWithDictionary:aModuleDict];
+    *aMosaicModule = [[MosaicData alloc] initWithDictionary:aModuleDict];
         [elements addObject:aMosaicModule];
     }
 }
