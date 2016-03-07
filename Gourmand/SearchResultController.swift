@@ -55,10 +55,11 @@ class SearchResultController: UITableViewController {
                 cell.foodName.text = foodName
                 cell.cookName.text = cookName
                 cell.foodPrice.text = String(price)
-                let image = UIImage(data: try file.getData(), scale: 0)
-                cell.imageView?.clipsToBounds = true
-                cell.imageView?.image = image
-                	
+                let image = UIImage(data: try file.getData())
+                cell.foodImage.image = image
+
+                
+                
                 
                 
             }catch{
