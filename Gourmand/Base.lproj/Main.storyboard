@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ewa-F4-TFN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A8H-KC-LKf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -287,7 +287,7 @@
         <!--SearchNav-->
         <scene sceneID="gqQ-2Y-YbU">
             <objects>
-                <navigationController title="SearchNav" id="eib-9K-63j" sceneMemberID="viewController">
+                <navigationController title="SearchNav" navigationBarHidden="YES" id="eib-9K-63j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="qz2-Q0-oF8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBm-dF-W9d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -358,48 +358,19 @@
         <!--HomeNav-->
         <scene sceneID="3di-rP-WsA">
             <objects>
-                <navigationController title="HomeNav" id="hQX-Kz-ztv" sceneMemberID="viewController">
+                <navigationController title="HomeNav" navigationBarHidden="YES" id="hQX-Kz-ztv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="BbT-oK-7hv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvy-5C-V05">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="50F-CJ-5ew" kind="relationship" relationship="rootViewController" id="f2Z-YC-XFq"/>
+                        <segue destination="J8b-gt-ZRR" kind="relationship" relationship="rootViewController" id="fiU-Ek-NZo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgR-Ua-gEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384" y="-1172"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="nI6-AG-j6w">
-            <objects>
-                <tableViewController title="Home" id="50F-CJ-5ew" customClass="HomeController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="E35-nv-dUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bgs-7O-fIB">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgs-7O-fIB" id="xeZ-kr-MeX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="50F-CJ-5ew" id="GF0-rf-f9T"/>
-                            <outlet property="delegate" destination="50F-CJ-5ew" id="yvV-1b-kvy"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="X0d-SQ-aps"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sAg-nr-JcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="336" y="-1172"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tkF-3S-Plv">
@@ -410,17 +381,64 @@
                         <viewControllerLayoutGuide type="bottom" id="sno-bO-ntx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NaD-sH-t2p" customClass="MosaicView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="i5E-al-l8e"/>
                     <connections>
                         <outlet property="mosaicView" destination="NaD-sH-t2p" id="PCx-14-x3Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsf-hr-bcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="-1172"/>
+            <point key="canvasLocation" x="1023" y="-1226.5"/>
+        </scene>
+        <!--Home Controller-->
+        <scene sceneID="qU6-hv-bYF">
+            <objects>
+                <viewController id="J8b-gt-ZRR" customClass="HomeController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xdu-Ut-WJs"/>
+                        <viewControllerLayoutGuide type="bottom" id="sye-mV-BFk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3gY-Pm-wmc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHD-uU-8JF">
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <connections>
+                                    <segue destination="Ewa-F4-TFN" kind="embed" id="17c-VJ-9lz"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodiesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnO-wT-VdK">
+                                <rect key="frame" x="20" y="28" width="560" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tHD-uU-8JF" secondAttribute="bottom" id="EK3-yJ-Jdv"/>
+                            <constraint firstItem="WnO-wT-VdK" firstAttribute="top" secondItem="Xdu-Ut-WJs" secondAttribute="bottom" constant="8" symbolic="YES" id="LOu-IU-z0e"/>
+                            <constraint firstItem="tHD-uU-8JF" firstAttribute="top" secondItem="Xdu-Ut-WJs" secondAttribute="bottom" constant="50" id="Yxr-HR-qca"/>
+                            <constraint firstItem="tHD-uU-8JF" firstAttribute="top" secondItem="WnO-wT-VdK" secondAttribute="bottom" constant="8" symbolic="YES" id="bDf-N8-ySC"/>
+                            <constraint firstItem="WnO-wT-VdK" firstAttribute="centerX" secondItem="tHD-uU-8JF" secondAttribute="centerX" id="fMN-8n-wta"/>
+                            <constraint firstItem="tHD-uU-8JF" firstAttribute="leading" secondItem="3gY-Pm-wmc" secondAttribute="leading" id="iVq-8H-Swb"/>
+                            <constraint firstAttribute="trailing" secondItem="tHD-uU-8JF" secondAttribute="trailing" id="l1p-wr-hR2"/>
+                            <constraint firstItem="WnO-wT-VdK" firstAttribute="leading" secondItem="3gY-Pm-wmc" secondAttribute="leadingMargin" id="yJG-yG-SWY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QkU-VB-Mk0"/>
+                    <connections>
+                        <outlet property="lblFoodiesta" destination="WnO-wT-VdK" id="Q7L-6l-BRS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQg-o9-Odw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="-1172"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -532,7 +550,7 @@
         <!--HistoryNav-->
         <scene sceneID="RQy-zu-5ZL">
             <objects>
-                <navigationController title="HistoryNav" id="OE2-Ar-l0s" sceneMemberID="viewController">
+                <navigationController title="HistoryNav" navigationBarHidden="YES" id="OE2-Ar-l0s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="History" id="uk6-3Z-huI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="im9-jw-PSJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -549,7 +567,7 @@
         <!--settingNav-->
         <scene sceneID="4GV-xw-6mu">
             <objects>
-                <navigationController title="settingNav" id="Ywu-Ga-tSw" sceneMemberID="viewController">
+                <navigationController title="settingNav" navigationBarHidden="YES" id="Ywu-Ga-tSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" id="VMl-aG-gXQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iHR-0p-0gb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -566,7 +584,7 @@
         <!--myProfileNav-->
         <scene sceneID="VMs-Dh-JVn">
             <objects>
-                <navigationController title="myProfileNav" id="vYl-e6-BEz" sceneMemberID="viewController">
+                <navigationController title="myProfileNav" navigationBarHidden="YES" id="vYl-e6-BEz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Profile" id="hKN-TD-tM4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ht3-u4-TAV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
