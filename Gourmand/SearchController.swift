@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftEventBus
 
 
 let segment_mapView = "select_map"
