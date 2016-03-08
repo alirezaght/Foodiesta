@@ -13,4 +13,18 @@ class   SearchOptionCell: UITableViewCell{
     @IBOutlet weak var label: UILabel!
     var filter:Filter?
     
+    
+    @IBAction func switchChanged(sender: UISwitch) {
+        if(filter != nil){
+            if(sender.on){
+                SearchOptionController.selectedFilters.append(filter!)
+            }else{
+                if let index = SearchOptionController.selectedFilters.indexOf({ (f) -> Bool in
+                    return f.objectId == filter!.objectId
+                }){
+                    SearchOptionController.selectedFilters.removeAtIndex(index)
+                }
+            }
+        }
+    }
 }

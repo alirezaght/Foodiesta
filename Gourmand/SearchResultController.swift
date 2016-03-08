@@ -9,10 +9,11 @@
 import Foundation
 import Parse
 class SearchResultController: UITableViewController {
-    
+    let detailSegue = "showDetailFoods"
     @IBOutlet weak var searchTableView: UITableView!
     var food: PFObject?
     var cooks: [PFObject]?
+    var selectedCook: PFObject?
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "searchResultReady:", name: "searchResultReady", object: nil)
@@ -57,7 +58,7 @@ class SearchResultController: UITableViewController {
                 cell.foodPrice.text = String(price)
                 let image = UIImage(data: try file.getData())
                 cell.foodImage.image = image
-
+                
                 
                 
                 
@@ -69,5 +70,17 @@ class SearchResultController: UITableViewController {
         }
         return cell
         
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(cooks != nil){
+            selectedCook = cooks![indexPath.row]
+            performSegueWithIdentifier(detailSegue, sender: self)
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier! == detailSegue){
+            let dest = sender?.destinationViewController as! DetailResultController
+            dest.cooks = [selectedCook!]
+        }
     }
 }
