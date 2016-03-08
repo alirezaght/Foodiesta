@@ -13,8 +13,7 @@ class   SearchOptionController: UITableViewController{
     static var selectedFilters = [Filter]()
     var catFilters = [Filter]()
     var ingFilters = [Filter]()
-    var count = 0
-    var map = [Int:Filter]()
+   
     func reloadData(){
         
         searchOptionTableView.reloadData()
@@ -44,9 +43,6 @@ class   SearchOptionController: UITableViewController{
         }
         cell.label.text = filter.name
         cell.filterSwitch.on = false
-        cell.filterSwitch.tag = count
-        map[count] = filter
-        count++
         cell.filter = filter
         return cell
     }
@@ -68,19 +64,6 @@ class   SearchOptionController: UITableViewController{
         }
     }
     
-    
-    @IBAction func switchChanged(sender: UISwitch) {
-        let filter = map[sender.tag]!
-        if(sender.on){
-            SearchOptionController.selectedFilters.append(filter)
-        }else{
-            if let index = SearchOptionController.selectedFilters.indexOf({ (f) -> Bool in
-                return f.objectId == filter.objectId
-            }){
-                SearchOptionController.selectedFilters.removeAtIndex(index)
-            }
-        }
-        
-    }
+   
     
 }
