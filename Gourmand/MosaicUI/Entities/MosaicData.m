@@ -22,6 +22,21 @@
     return self;
 }
 
+
+-(id)initWithParse:(PFObject *)parse{
+    self = [self init];
+    if(self){
+        self.image = parse[@"photo"];
+        self.price = [parse[@"price"] stringValue] ;
+        self.title = parse[@"food"][@"name"];
+        self.size = [parse[@"type"] integerValue ];
+    }
+    return self;
+}
+
+
+
+
 -(NSString *)description{
     NSString *retVal = [NSString stringWithFormat:@"%@ %@", [super description], self.title];
     return retVal;

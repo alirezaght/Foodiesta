@@ -25,8 +25,6 @@
     _maxElementsY = -1;
     
     
-    
-    
     //  Add scrollview and set its position and size using autolayout constraints
     scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     scrollView.backgroundColor = [UIColor whiteColor];
@@ -179,6 +177,14 @@
         retVal = kMaxScrollPages_iPad;
     }
     return retVal;
+}
+
+
+
+- (void)addNewElements:(NSArray *)newElements{
+ 
+    //// if you want someday add something to view must implement this method .... ehsan
+    
 }
 
 - (void)setupLayoutWithMosaicElements:(NSArray *)mosaicElements{

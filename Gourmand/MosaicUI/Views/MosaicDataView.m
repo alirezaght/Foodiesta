@@ -64,11 +64,14 @@
 -(void)setModule:(MosaicData *)newModule{
     module = newModule;
     
-    UIImage *anImage = [UIImage imageNamed:self.module.imageFilename];
-    imageView.image = anImage;
+    
+    
+    
+//    UIImage *anImage = [UIImage imageNamed:self.module.imageFilename];
+//    imageView.image = anImage;
  
-    
-    
+    UIImage *anImage = [UIImage imageWithData : [module.image getData]];
+    imageView.image = anImage ;
     
     
     CGSize imgFinalSize = CGSizeZero;
