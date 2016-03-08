@@ -45,27 +45,31 @@ class SearchResultController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchResultCell") as! SearchResultCell
         if(cooks != nil){
-            do{
-                let cook = cooks![indexPath.row]
-                let food = cook["food"] as! PFObject
-                let user = cook["user"] as! PFUser
-                let file = cook["photo"] as! PFFile
-                let cookName = user["first_name"] as! String
-                let price = cook["price"] as! Double
-                let foodName = food["name"] as! String
-                cell.foodName.text = foodName
-                cell.cookName.text = cookName
-                cell.foodPrice.text = String(price)
-                let image = UIImage(data: try file.getData())
-                cell.foodImage.image = image
-                
-                
-                
-                
-                
-            }catch{
-                
-            }
+            let cook = cooks![indexPath.row]
+            let food = cook["food"] as! PFObject
+            let user = cook["user"] as! PFUser
+            let file = cook["photo"] as? PFFile
+            let cookName = user["first_name"] as! String
+            let price = cook["price"] as? Double
+            let foodName = food["name"] as! String
+            cell.foodName.text = foodName
+            cell.cookName.text = cookName
+            cell.foodPrice.text = String(price)
+            file?.getDataInBackgroundWithBlock({ (data, err) -> Void in
+                if(data != nil){
+                    let image = UIImage(data: data!)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SearchResultCell
+                        cell.foodImage.image = image
+                    })
+                }
+            })
+            
+            
+            
+            
+            
+            
             
         }
         return cell
@@ -79,7 +83,7 @@ class SearchResultController: UITableViewController {
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier! == detailSegue){
-            let dest = sender?.destinationViewController as! DetailResultController
+            let dest = segue.destinationViewController as! DetailResultController
             dest.cooks = [selectedCook!]
         }
     }

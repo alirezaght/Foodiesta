@@ -141,7 +141,7 @@
         <scene sceneID="Vn7-cK-wMR">
             <objects>
                 <tableViewController storyboardIdentifier="SearchTable" title="SearchTable" id="sQ3-cV-Oic" customClass="SearchResultController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="odh-M2-1kR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="odh-M2-1kR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,7 +289,7 @@
         <scene sceneID="gD2-a2-ABK">
             <objects>
                 <tableViewController id="158-Az-qeH" customClass="DetailResultController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" id="vbB-lq-uPR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" id="vbB-lq-uPR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -377,7 +377,6 @@
                                     <outlet property="foodImage" destination="E01-9i-Q0c" id="Axy-OE-v2j"/>
                                     <outlet property="ingredientView" destination="Wde-cr-vSj" id="72m-E2-d4W"/>
                                     <outlet property="kitchenImage" destination="zkf-zd-b4P" id="OpF-IV-3X7"/>
-                                    <outlet property="kitchenView" destination="LG6-jS-fhq" id="UT9-eG-yGd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
