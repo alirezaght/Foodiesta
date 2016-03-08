@@ -97,11 +97,13 @@ static UIImageView *captureSnapshotOfView(UIView *targetView){
 #pragma mark - MosaicViewDelegateProtocol
 
 -(void)mosaicViewDidTap:(MosaicDataView *)aModule{
-    NSLog(@"#DEBUG Tapped %@", aModule.module);
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"goToDetail"
+     object:self];
 }
 
 -(void)mosaicViewDidDoubleTap:(MosaicDataView *)aModule{
-    NSLog(@"#DEBUG Double Tapped %@", aModule.module);
+   // NSLog(@"#DEBUG Double Tapped %@", aModule.module);
 }
 
 @end
