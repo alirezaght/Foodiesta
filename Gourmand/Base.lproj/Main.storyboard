@@ -283,7 +283,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI7-Hw-Ip7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="85"/>
+            <point key="canvasLocation" x="1651" y="85"/>
         </scene>
         <!--Detail Result Controller-->
         <scene sceneID="gD2-a2-ABK">
@@ -388,17 +388,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iZ-18-jHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2416" y="85"/>
+            <point key="canvasLocation" x="2490" y="85"/>
         </scene>
         <!--SearchNav-->
         <scene sceneID="gqQ-2Y-YbU">
             <objects>
-                <navigationController title="SearchNav" navigationBarHidden="YES" id="eib-9K-63j" sceneMemberID="viewController">
+                <navigationController title="SearchNav" id="eib-9K-63j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="qz2-Q0-oF8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBm-dF-W9d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bCV-hz-2yi">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="3XK-W7-bBd" kind="relationship" relationship="rootViewController" id="sah-Ym-bhF"/>
                     </connections>
@@ -459,12 +463,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8Y-DC-1jp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-620"/>
+            <point key="canvasLocation" x="1759" y="-490"/>
         </scene>
         <!--HomeNav-->
         <scene sceneID="3di-rP-WsA">
             <objects>
-                <navigationController title="HomeNav" navigationBarHidden="YES" id="hQX-Kz-ztv" sceneMemberID="viewController">
+                <navigationController title="HomeNav" navigationBarHidden="YES" id="hQX-Kz-ztv" customClass="HomeNavController" customModule="Gourmand" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="BbT-oK-7hv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvy-5C-V05">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -472,6 +476,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="J8b-gt-ZRR" kind="relationship" relationship="rootViewController" id="fiU-Ek-NZo"/>
+                        <segue destination="158-Az-qeH" kind="show" identifier="DetailResultController" id="VHq-rP-ERD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgR-Ua-gEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsf-hr-bcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="-1207"/>
+            <point key="canvasLocation" x="1005" y="-1172"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="qU6-hv-bYF">
@@ -780,4 +785,7 @@
         <image name="facebook" width="75" height="75"/>
         <image name="twitter" width="75" height="75"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VHq-rP-ERD"/>
+    </inferredMetricsTieBreakers>
 </document>
