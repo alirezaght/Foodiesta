@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface MosaicData : NSObject{
-    NSString *imageFilename;
+//    NSString *imageFilename;
+    PFFile *image ;
     NSString *title;
     NSString *price ;
     NSInteger size;
@@ -17,9 +19,13 @@
 
 -(id)initWithDictionary:(NSDictionary *)aDict;
 
+-(id)initWithParse:(PFObject *)parse ;
+
+
 @property (strong) NSString *imageFilename;
 @property (strong) NSString *title;
 @property (readwrite) NSInteger size;
-@property (strong) NSString *price ; 
+@property (strong) NSString *price ;
+@property (strong) PFFile *image;
 
 @end

@@ -47,7 +47,21 @@ static UIImageView *captureSnapshotOfView(UIView *targetView){
     [super viewDidLoad];
     mosaicView.datasource = [HomeViewDataSet sharedInstance];
     mosaicView.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"update"
+                                               object:nil];
 }
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:@"update"])
+        [mosaicView refresh];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

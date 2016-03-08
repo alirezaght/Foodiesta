@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A8H-KC-LKf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -375,13 +375,13 @@
         <!--Home View Controller-->
         <scene sceneID="tkF-3S-Plv">
             <objects>
-                <viewController id="Ewa-F4-TFN" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewMosaic" id="Ewa-F4-TFN" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pkb-Dk-uTo"/>
                         <viewControllerLayoutGuide type="bottom" id="sno-bO-ntx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NaD-sH-t2p" customClass="MosaicView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -392,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsf-hr-bcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="-1226.5"/>
+            <point key="canvasLocation" x="1024" y="-1207"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="qU6-hv-bYF">
@@ -408,9 +408,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHD-uU-8JF">
                                 <rect key="frame" x="0.0" y="70" width="600" height="530"/>
-                                <connections>
-                                    <segue destination="Ewa-F4-TFN" kind="embed" id="17c-VJ-9lz"/>
-                                </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foodiesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnO-wT-VdK">
                                 <rect key="frame" x="20" y="28" width="560" height="34"/>
@@ -433,7 +430,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QkU-VB-Mk0"/>
                     <connections>
-                        <outlet property="lblFoodiesta" destination="WnO-wT-VdK" id="Q7L-6l-BRS"/>
+                        <outlet property="container" destination="tHD-uU-8JF" id="Cgt-vk-B9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQg-o9-Odw" userLabel="First Responder" sceneMemberID="firstResponder"/>
