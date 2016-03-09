@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gourmand/HomeNavController.swift"
-            timestampString = "479211366.230488"
+            timestampString = "479217508.045966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "actOnSpecialNotification(_:)"
             landmarkType = "5">
          </BreakpointContent>

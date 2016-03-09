@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import MBProgressHUD
 
 class HomeNavController: UINavigationController {
 
@@ -15,26 +16,6 @@ class HomeNavController: UINavigationController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
-        
-        
-        
-       
-        for family: String in UIFont.familyNames()
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family)
-            {
-                print("== \(names)")
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "actOnSpecialNotification:", name: "goToDetail", object: nil)
 		self.setNavigationBarHidden(false, animated: true)
 		let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.redColor()]
@@ -44,6 +25,7 @@ class HomeNavController: UINavigationController {
 
 	func actOnSpecialNotification(notification : NSNotification) {
 
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 		let userInfo: Dictionary<String, String!> = notification.userInfo as! Dictionary<String, String!>
 		let cookId = userInfo["cookId"]
 
@@ -53,6 +35,8 @@ class HomeNavController: UINavigationController {
 				self.cooks.append(object!)
                 self.topViewController?.title = ""
 				self.performSegueWithIdentifier("DetailResultController", sender: self)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
 			}
 		}
 	}
