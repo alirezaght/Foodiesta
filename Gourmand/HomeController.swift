@@ -23,6 +23,8 @@ class HomeController : UIViewController {
         vc.didMoveToParentViewController(self)
     }
     
- 
+    override func viewWillAppear(animated: Bool) {
+         self.navigationItem.title = " Foodiesta "
+    }
    
 }

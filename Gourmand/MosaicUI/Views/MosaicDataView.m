@@ -55,14 +55,13 @@
     return retVal;
 }
 
- 
-
 -(void)setTitle:(NSString *)title{
     titleLabel.text = title;
 }
 
 -(void)setModule:(MosaicData *)newModule{
     module = newModule;
+    cookId = newModule.cookId ; 
     
     
     

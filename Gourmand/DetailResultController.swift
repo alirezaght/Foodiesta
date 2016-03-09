@@ -13,6 +13,8 @@ class DetailResultController: UITableViewController {
     var cooks = [PFObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = " Detial "
+        
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -45,4 +47,7 @@ class DetailResultController: UITableViewController {
         }
         return cell
     }
+    
+    
+    
 }

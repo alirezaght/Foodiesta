@@ -97,9 +97,12 @@ static UIImageView *captureSnapshotOfView(UIView *targetView){
 #pragma mark - MosaicViewDelegateProtocol
 
 -(void)mosaicViewDidTap:(MosaicDataView *)aModule{
+    NSString *cookId =  aModule.module.cookId;
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:cookId forKey:@"cookId"];
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"goToDetail"
-     object:self];
+     object:self
+     userInfo:userInfo];
 }
 
 -(void)mosaicViewDidDoubleTap:(MosaicDataView *)aModule{

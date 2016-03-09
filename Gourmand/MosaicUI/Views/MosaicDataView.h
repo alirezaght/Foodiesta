@@ -18,11 +18,14 @@
     UILabel *priceLabel;
     UIView *uiview ; 
     MosaicData *module;
+    NSString *cookId ;
 }
 
 @property (strong) NSString *title;
 @property (strong) MosaicData *module;
 @property (weak) MosaicView *mosaicView;
+@property (strong) NSString *cookId ; 
+
 
 
 
