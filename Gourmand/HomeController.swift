@@ -24,7 +24,9 @@ class HomeController : UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-         self.navigationItem.title = " Foodiesta "
+<#code#>
+}(animated: Bool) {
+         self.navigationItem.title = "Foodiesta"
     }
    
 }

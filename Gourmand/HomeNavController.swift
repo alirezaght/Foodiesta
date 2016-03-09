@@ -30,6 +30,7 @@ class HomeNavController: UINavigationController {
 		query.getObjectInBackgroundWithId(cookId!) { (object : PFObject?, error: NSError?) -> Void in
 			if error == nil {
 				self.cooks.append(object!)
+                self.topViewController?.title = ""
 				self.performSegueWithIdentifier("DetailResultController", sender: self)
 			}
 		}
