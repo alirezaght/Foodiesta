@@ -25,6 +25,7 @@
 		8498B2E31C8B168A009A433E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498B2E21C8B168A009A433E /* SearchResultController.swift */; };
 		8498B2E51C8B16F4009A433E /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498B2E41C8B16F4009A433E /* SearchResultCell.swift */; };
 		84ADF1161C85B3E500B60E25 /* CookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADF1151C85B3E500B60E25 /* CookService.swift */; };
+		9A1CAA0C1C902E6000F81831 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A1CAA0B1C902E6000F81831 /* icomoon.ttf */; };
 		9A43FA551C8EEE9400ABE2E1 /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A43FA541C8EEE9400ABE2E1 /* HomeNavController.swift */; };
 		9A5BD2261C832608009FC1E1 /* SearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BD2251C832608009FC1E1 /* SearchPageController.swift */; };
 		9A6F684C1C6F01550020BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F684B1C6F01550020BFB6 /* AppDelegate.swift */; };
@@ -115,6 +116,7 @@
 		8498B2E41C8B16F4009A433E /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		84ADF1151C85B3E500B60E25 /* CookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookService.swift; sourceTree = "<group>"; };
 		84ADF11E1C86F59100B60E25 /* MosaicUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MosaicUI.framework; path = "Pods/../build/Debug-iphoneos/MosaicUI.framework"; sourceTree = "<group>"; };
+		9A1CAA0B1C902E6000F81831 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		9A43FA541C8EEE9400ABE2E1 /* HomeNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
 		9A5BD2251C832608009FC1E1 /* SearchPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPageController.swift; sourceTree = "<group>"; };
 		9A6F68481C6F01550020BFB6 /* Gourmand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +339,7 @@
 		9A6F683F1C6F01550020BFB6 = {
 			isa = PBXGroup;
 			children = (
+				9A1CAA0B1C902E6000F81831 /* icomoon.ttf */,
 				8439E55F1C8D66D9000284D7 /* autoIncrementBuildNumber.sh */,
 				9A6F684A1C6F01550020BFB6 /* Gourmand */,
 				9A74A49F1C707D380006605D /* lib */,
@@ -664,6 +667,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1CAA0C1C902E6000F81831 /* icomoon.ttf in Resources */,
 				9AF40C771C8C418D0005DC9D /* data.json in Resources */,
 				9AC628181C8D7F8200BAA266 /* 003.jpg in Resources */,
 				9A6F68591C6F01550020BFB6 /* LaunchScreen.storyboard in Resources */,

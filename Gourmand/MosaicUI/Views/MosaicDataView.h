@@ -16,9 +16,17 @@
     UIImageView *imageView;
     UILabel *titleLabel;
     UILabel *priceLabel;
-    UIView *uiview ; 
+    UIView *uiview ;
+    UIView *rateView; 
     MosaicData *module;
     NSString *cookId ;
+    
+    UILabel *star ; 
+    
+    
+    
+    
+    
 }
 
 @property (strong) NSString *title;
