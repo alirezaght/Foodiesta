@@ -23,10 +23,10 @@ class HomeController : UIViewController {
         vc.didMoveToParentViewController(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
-<#code#>
-}(animated: Bool) {
-         self.navigationItem.title = "Foodiesta"
+    override func viewDidAppear(animated: Bool) {
+         self.navigationItem.title = " Foodiesta "
     }
+    
+ 
    
 }

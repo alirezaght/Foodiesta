@@ -40,6 +40,7 @@ class HomeNavController: UINavigationController {
 		if segue.identifier == "DetailResultController" {
 			let viewController = segue.destinationViewController as! DetailResultController
 			viewController.cooks = self.cooks
+            self.cooks.removeAll()
 		}
 	}
 }

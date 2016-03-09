@@ -239,6 +239,7 @@
     }
     
     //  Setup content size
+    scrollHeight = scrollHeight + 50 ; 
     CGSize contentSize = CGSizeMake(scrollView.frame.size.width,scrollHeight);
     scrollView.contentSize = contentSize;    
 }
