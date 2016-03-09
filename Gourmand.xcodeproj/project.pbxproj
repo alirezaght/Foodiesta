@@ -11,6 +11,7 @@
 		5510BCE53F35E55323F1E03F /* Pods_GourmandUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCE330A8CB7720CEF6649F2 /* Pods_GourmandUITests.framework */; };
 		841DA2641C8EB63300B3FCCC /* DetailResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DA2631C8EB63300B3FCCC /* DetailResultController.swift */; };
 		841DA2661C8EB6DE00B3FCCC /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DA2651C8EB6DE00B3FCCC /* DetailCell.swift */; };
+		841DA26B1C8FFFB500B3FCCC /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DA26A1C8FFFB500B3FCCC /* PurchaseService.swift */; };
 		842553361C8431B500CF9D94 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553341C8431B500CF9D94 /* AddressBar.swift */; };
 		842553391C8431C000CF9D94 /* Soap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842553381C8431C000CF9D94 /* Soap.swift */; };
 		8439E56B1C8DBE98000284D7 /* MPGTextField-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439E56A1C8DBE98000284D7 /* MPGTextField-Swift.swift */; };
@@ -97,6 +98,7 @@
 		7DE0A63FB0BF259F105C50E5 /* Pods-GourmandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmandTests/Pods-GourmandTests.debug.xcconfig"; sourceTree = "<group>"; };
 		841DA2631C8EB63300B3FCCC /* DetailResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailResultController.swift; sourceTree = "<group>"; };
 		841DA2651C8EB6DE00B3FCCC /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		841DA26A1C8FFFB500B3FCCC /* PurchaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
 		842553341C8431B500CF9D94 /* AddressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
 		842553381C8431C000CF9D94 /* Soap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soap.swift; sourceTree = "<group>"; };
 		8439E55E1C8D5960000284D7 /* Gourmand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gourmand-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -251,6 +253,22 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		841DA2691C8FFF8100B3FCCC /* Purchase Service */ = {
+			isa = PBXGroup;
+			children = (
+				841DA26A1C8FFFB500B3FCCC /* PurchaseService.swift */,
+			);
+			name = "Purchase Service";
+			sourceTree = "<group>";
+		};
+		841DA26C1C900B4A00B3FCCC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9AF7F2F31C82F64D00470A3F /* HistoryController.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		843928511C81B35A0038E333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +301,7 @@
 		845EAC7A1C85828400419C66 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				841DA2691C8FFF8100B3FCCC /* Purchase Service */,
 				8498B2DB1C8AAE10009A433E /* SearchOption Service */,
 				84ADF1141C85B3D200B60E25 /* Cook Service */,
 				845EAC7D1C8582E200419C66 /* Search Service */,
@@ -401,11 +420,11 @@
 		9AC2B5E21C7319160054AADC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841DA26C1C900B4A00B3FCCC /* History */,
 				841DA2621C8EB4EE00B3FCCC /* Search */,
 				9AF40C781C8C45BC0005DC9D /* Home */,
 				9AC2B5E01C73121F0054AADC /* MapViewController.swift */,
 				9A6F684D1C6F01550020BFB6 /* LoginController.swift */,
-				9AF7F2F31C82F64D00470A3F /* HistoryController.swift */,
 				9AF7F2F51C82F66400470A3F /* MyProfileController.swift */,
 				9AF7F2F71C82F67400470A3F /* SettingController.swift */,
 				841DA2631C8EB63300B3FCCC /* DetailResultController.swift */,
@@ -845,6 +864,7 @@
 				8498B2E11C8AC85E009A433E /* SearchBar.swift in Sources */,
 				9AF7F2F21C82F63900470A3F /* HomeController.swift in Sources */,
 				9AF7F2F81C82F67400470A3F /* SettingController.swift in Sources */,
+				841DA26B1C8FFFB500B3FCCC /* PurchaseService.swift in Sources */,
 				845EAC7C1C8582B000419C66 /* SearchService.swift in Sources */,
 				845EAC801C85839800419C66 /* Filter.swift in Sources */,
 				8439E56B1C8DBE98000284D7 /* MPGTextField-Swift.swift in Sources */,

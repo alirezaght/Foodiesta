@@ -11,6 +11,7 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
+pod 'MBProgressHUD'
 end
 
 target 'GourmandTests' do
@@ -20,7 +21,7 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
-
+pod 'MBProgressHUD'
 
 end
 
@@ -31,6 +32,6 @@ pod 'GoogleMaps'
 pod 'PayPal-iOS-SDK'
 pod 'ParseFacebookUtilsV4'
 pod 'ParseTwitterUtils'
-
+pod 'MBProgressHUD'
 end
 

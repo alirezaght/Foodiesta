@@ -17,6 +17,16 @@ class SearchResultController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "searchResultReady:", name: "searchResultReady", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showHistory:", name: "showHistory", object: nil)
+    }
+   
+  
+    func showHistory(notification: NSNotification){
+        if let cooks = notification.userInfo?["result"] as? [PFObject]
+        {
+            self.cooks = cooks
+            self.searchTableView.reloadData()
+        }
     }
     func searchResultReady(notification: NSNotification){
         if let food = notification.userInfo?["result"] as? PFObject{
