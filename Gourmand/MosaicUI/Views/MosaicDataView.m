@@ -69,69 +69,76 @@
 //    UIImage *anImage = [UIImage imageNamed:self.module.imageFilename];
 //    imageView.image = anImage;
  
-    UIImage *anImage = [UIImage imageWithData : [module.image getData]];
-    imageView.image = anImage ;
-    
-    
-    CGSize imgFinalSize = CGSizeZero;
-
-    if (anImage.size.width < anImage.size.height){
-        imgFinalSize.width = self.bounds.size.width;
-        imgFinalSize.height = self.bounds.size.width * anImage.size.height / anImage.size.width;
-        
-        //  This is to avoid black bars on the bottom and top of the image
-        //  Happens when images have its height lesser than its bounds
-        if (imgFinalSize.height < self.bounds.size.height){
-            imgFinalSize.width = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
-            imgFinalSize.height = self.bounds.size.height;
+    [module.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (error  == nil) {
+            UIImage *anImage = [UIImage imageWithData : data];
+            imageView.image = anImage ;
+            CGSize imgFinalSize = CGSizeZero;
+            
+            if (anImage.size.width < anImage.size.height){
+                imgFinalSize.width = self.bounds.size.width;
+                imgFinalSize.height = self.bounds.size.width * anImage.size.height / anImage.size.width;
+                
+                //  This is to avoid black bars on the bottom and top of the image
+                //  Happens when images have its height lesser than its bounds
+                if (imgFinalSize.height < self.bounds.size.height){
+                    imgFinalSize.width = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
+                    imgFinalSize.height = self.bounds.size.height;
+                }
+            }else{
+                imgFinalSize.height = self.bounds.size.height;
+                imgFinalSize.width = self.bounds.size.height * anImage.size.width / anImage.size.height;
+                
+                //  This is to avoid black bars on the left and right of the image
+                //  Happens when images have its width lesser than its bounds
+                if (imgFinalSize.width < self.bounds.size.width){
+                    imgFinalSize.height = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
+                    imgFinalSize.width = self.bounds.size.width;
+                }
+            }
+            
+            //    NSLog(@"#DEBUG imageRect %.2f %.2f (%.2f %.2f) %@", imgFinalSize.width, imgFinalSize.height, anImage.size.width, anImage.size.height, newModule);
+            
+            imageView.frame = CGRectMake(0, 0, imgFinalSize.width , imgFinalSize.height );
+            imageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+            
+            //  Set new title
+            //    NSInteger marginLeft = self.frame.size.width / 20;
+            //    NSInteger marginBottom = self.frame.size.height / 20;
+            
+            titleLabel.text = module.title;
+            titleLabel.font = [self fontWithModuleSize:module.size];
+            
+            
+            priceLabel.text = module.price;
+            priceLabel.font = [self fontWithModuleSize:module.size];
+            
+            
+            CGSize priceSize = [module.price sizeWithFont:priceLabel.font constrainedToSize:priceLabel.frame.size];
+            CGRect priceRect = CGRectMake(self.frame.size.width - priceSize.width - 5 , self.frame.size.height - 20 , priceSize.width, 20);
+            priceLabel.frame = priceRect ;
+            
+            
+            CGSize newSize = [module.title sizeWithFont:titleLabel.font constrainedToSize:titleLabel.frame.size];
+            if (newSize.width > self.frame.size.width  / 2 ) {
+                newSize.width = self.frame.size.width  / 2 ;
+            }
+            CGRect newRect = CGRectMake(5,
+                                        self.frame.size.height - 20 ,
+                                        newSize.width,
+                                        20);
+            titleLabel.frame = newRect;
+            
+            
+            uiview.frame =  CGRectMake( 0  , self.frame.size.height - 20 , imgFinalSize.width, 20);
+            uiview.backgroundColor = [UIColor blackColor] ;
         }
-    }else{
-        imgFinalSize.height = self.bounds.size.height;
-        imgFinalSize.width = self.bounds.size.height * anImage.size.width / anImage.size.height;
-        
-        //  This is to avoid black bars on the left and right of the image
-        //  Happens when images have its width lesser than its bounds
-        if (imgFinalSize.width < self.bounds.size.width){
-            imgFinalSize.height = self.bounds.size.height * self.bounds.size.width / imgFinalSize.height;
-            imgFinalSize.width = self.bounds.size.width;
-        }
-    }
-    
-//    NSLog(@"#DEBUG imageRect %.2f %.2f (%.2f %.2f) %@", imgFinalSize.width, imgFinalSize.height, anImage.size.width, anImage.size.height, newModule);
-    
-    imageView.frame = CGRectMake(0, 0, imgFinalSize.width , imgFinalSize.height );
-    imageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-    
-    //  Set new title
-//    NSInteger marginLeft = self.frame.size.width / 20;
-//    NSInteger marginBottom = self.frame.size.height / 20;
-    
-    titleLabel.text = module.title;
-    titleLabel.font = [self fontWithModuleSize:module.size];
+      
+    }];
+   
     
     
-    priceLabel.text = module.price;
-    priceLabel.font = [self fontWithModuleSize:module.size];
-
-    
-    CGSize priceSize = [module.price sizeWithFont:priceLabel.font constrainedToSize:priceLabel.frame.size];
-    CGRect priceRect = CGRectMake(self.frame.size.width - priceSize.width - 5 , self.frame.size.height - 20 , priceSize.width, 20);
-    priceLabel.frame = priceRect ;
-    
-    
-    CGSize newSize = [module.title sizeWithFont:titleLabel.font constrainedToSize:titleLabel.frame.size];
-    if (newSize.width > self.frame.size.width  / 2 ) {
-        newSize.width = self.frame.size.width  / 2 ;
-    }
-    CGRect newRect = CGRectMake(5,
-                                self.frame.size.height - 20 ,
-                                newSize.width,
-                                20);
-    titleLabel.frame = newRect;
-    
-    
-    uiview.frame =  CGRectMake( 0  , self.frame.size.height - 20 , imgFinalSize.width, 20);
-    uiview.backgroundColor = [UIColor blackColor] ;
+   
 
 }
 

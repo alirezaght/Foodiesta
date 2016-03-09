@@ -40,7 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 		PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-
+        if(self.localDb.shouldUpdateFromServer)
+        {
+            self.localDb.syncFromServer()
+        }
 		return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 	}
     
@@ -58,10 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //Make sure it isn't already declared in the app delegate (possible redefinition of func error)
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
-        if(localDb.shouldUpdateFromServer)
-        {
-            localDb.syncFromServer()
-        }
+        
     }
     
     
