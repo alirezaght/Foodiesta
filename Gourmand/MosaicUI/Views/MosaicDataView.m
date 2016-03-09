@@ -215,7 +215,7 @@
         
         
         star = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
-        [star setFont:[UIFont fontWithName:@"icomoon" size:130]];
+        [star setFont:[UIFont fontWithName:@"icomoon" size:32]];
         [rateView addSubview:star];
         
         
