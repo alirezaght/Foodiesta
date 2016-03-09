@@ -10,12 +10,15 @@ import Foundation
 import Parse
 class DetailCell: UITableViewCell {
     
+   
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var kitchenImage: UIImageView!
-    @IBOutlet weak var ingredientView: UIScrollView!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var cookName: UILabel!
     @IBOutlet weak var addToCart: UIButton!
     var cook: PFObject?
     @IBAction func addToCartClicked(sender: AnyObject) {
     }
+    
+    
 }

@@ -42,37 +42,37 @@ class DetailResultController: UITableViewController {
                 }
             })
         }catch{}
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
-            let ingredientIds = cook["ingredients"] as! [String]
-            var ingredients = [PFObject]()
-            for id in ingredientIds{
-                do{
-                    ingredients.append(try PFQuery(className: "Ingredient").fromLocalDatastore().getObjectWithId(id))
-                }catch{}
-            }
-            var count = 0
-            for ing in ingredients{
-                let yOffset = ((count++)*50)
-                let label = UILabel(frame: CGRect(x: 60, y: (25 + yOffset), width: 100, height: 20))
-                label.text = ing["name"] as? String
-                do{
-                    if let data = try (ing["photo"] as? PFFile)?.getData(){
-                        let ingImage = UIImage(data: data)
-                        let imageView = UIImageView(image: ingImage)
-                        imageView.frame = CGRect(x: 0, y: yOffset, width: 50, height: 50)
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailCell
-                            cell.ingredientView.addSubview(imageView)
-                        })
-                        
-                    }
-                }catch{}
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in                                                let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailCell
-//                    cell.ingredientView.addSubview(label)
-//                })
-                
-            }
+        let ingredientIds = cook["ingredients"] as! [String]
+        var ingredients = [PFObject]()
+        for id in ingredientIds{
+            do{
+                ingredients.append(try PFQuery(className: "Ingredient").fromLocalDatastore().getObjectWithId(id))
+            }catch{}
         }
+        var count = 0
+        for ing in ingredients{
+            let yOffset = ((count++)*50)
+            let label = UILabel(frame: CGRect(x: 60, y: (25 + yOffset), width: 100, height: 20))
+            label.text = ing["name"] as? String
+            do{
+                if let data = try (ing["photo"] as? PFFile)?.getData(){
+                    let ingImage = UIImage(data: data)
+                    let imageView = UIImageView(image: ingImage)
+                    imageView.frame = CGRect(x: 0, y: yOffset, width: 50, height: 50)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailCell
+                        cell.scrollView.addSubview(imageView)
+                        print("table cell updated.")
+                    })
+                    
+                }
+            }catch{}
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in                                                let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailCell
+                cell.scrollView.addSubview(label)
+            })
+            
+        }
+        
         return cell
     }
 }
