@@ -132,6 +132,19 @@
             
             uiview.frame =  CGRectMake( 0  , self.frame.size.height - 20 , imgFinalSize.width, 20);
             uiview.backgroundColor = [UIColor blackColor] ;
+            
+            
+            rateView.frame = CGRectMake(0, 0, self.frame.size.width, 20);
+            rateView.backgroundColor = [UIColor whiteColor];
+            
+            
+           
+            star.text = @"\uE907";
+            star.textColor = [UIColor redColor];
+       
+      
+        
+            
         }
       
     }];
@@ -197,11 +210,20 @@
         uiview = [[UIView alloc] initWithFrame:imageViewFrame];
         uiview.alpha = 0.6;
         
+        rateView = [[UIView alloc] initWithFrame:imageViewFrame];
+        rateView.alpha = 0.6;
+        
+        
+        star = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
+        [star setFont:[UIFont fontWithName:@"icomoon" size:130]];
+        [rateView addSubview:star];
+        
+        
         
         
         [self addSubview:imageView];
         [self addSubview:uiview];
-      
+        [self addSubview:rateView];
         
       
         

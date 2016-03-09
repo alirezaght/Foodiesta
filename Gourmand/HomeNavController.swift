@@ -12,8 +12,29 @@ import Parse
 class HomeNavController: UINavigationController {
 
 	var cooks = [PFObject]()
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        
+        
+        
+       
+        for family: String in UIFont.familyNames()
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNamesForFamilyName(family)
+            {
+                print("== \(names)")
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "actOnSpecialNotification:", name: "goToDetail", object: nil)
 		self.setNavigationBarHidden(false, animated: true)
 		let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.redColor()]
@@ -35,7 +56,6 @@ class HomeNavController: UINavigationController {
 			}
 		}
 	}
-
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "DetailResultController" {
 			let viewController = segue.destinationViewController as! DetailResultController
