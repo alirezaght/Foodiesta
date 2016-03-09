@@ -53,17 +53,19 @@ class DetailResultController: UITableViewController {
         }
         var count = 0
         for ing in ingredients{
-            let yOffset = ((count++)*50)
-            let label = UILabel(frame: CGRect(x: 60, y: (25 + yOffset), width: 100, height: 20))
+            let rowSize = CGFloat(60)
+            let yOffset = CGFloat(((count++)*Int(rowSize)))
+            let label = UILabel(frame: CGRect(x: 60, y: (20 + yOffset), width: 100, height: 20))
             label.text = ing["name"] as? String
             do{
                 if let data = try (ing["photo"] as? PFFile)?.getData(){
                     let ingImage = UIImage(data: data)
                     let imageView = UIImageView(image: ingImage)
-                    imageView.frame = CGRect(x: 0, y: yOffset, width: 50, height: 50)
+                    imageView.frame = CGRect(x: 0, y: (5+yOffset), width: 50, height: 50)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         let cell = tableView.cellForRowAtIndexPath(indexPath) as! DetailCell
                         cell.scrollView.addSubview(imageView)
+                        cell.scrollView.contentSize = CGSize(width: cell.scrollView.contentSize.width, height: cell.scrollView.contentSize.height+rowSize)
                         print("table cell updated.")
                     })
                     
