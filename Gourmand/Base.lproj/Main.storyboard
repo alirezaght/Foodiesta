@@ -118,7 +118,7 @@
                                     <segue destination="2w1-Tg-i50" kind="embed" id="jvq-Jp-V0s"/>
                                 </connections>
                             </containerView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gYn-U3-bkE" customClass="SearchBar" customModule="Gourmand" customModuleProvider="target">
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="gYn-U3-bkE" customClass="SearchBar" customModule="Gourmand" customModuleProvider="target">
                                 <rect key="frame" x="30" y="64" width="540" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
