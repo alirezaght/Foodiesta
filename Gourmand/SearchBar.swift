@@ -18,9 +18,11 @@ class SearchBar: MPGTextField, MPGTextFieldDelegate{
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         mDelegate = self
+    
     }
     //MARK: override Functions
     func dataForPopoverInTextField(textField: MPGTextField) -> [Dictionary<String, AnyObject>]{
+        
         let search = textField.text
         if(filterDelegate != nil){
             filters = filterDelegate!()
