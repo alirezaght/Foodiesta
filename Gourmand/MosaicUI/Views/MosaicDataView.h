@@ -21,6 +21,7 @@
     MosaicData *module;
     NSString *cookId ;
     
+    NSInteger rate ;
     UILabel *star ; 
     
     
@@ -32,9 +33,7 @@
 @property (strong) NSString *title;
 @property (strong) MosaicData *module;
 @property (weak) MosaicView *mosaicView;
-@property (strong) NSString *cookId ; 
-
-
-
+@property (strong) NSString *cookId ;
+@property (readwrite) NSInteger rate;
 
 @end

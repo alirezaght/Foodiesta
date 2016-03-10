@@ -61,7 +61,8 @@
 
 -(void)setModule:(MosaicData *)newModule{
     module = newModule;
-    cookId = newModule.cookId ; 
+    cookId = newModule.cookId ;
+    rate = newModule.rate ;
     
     
     
@@ -138,12 +139,18 @@
             rateView.backgroundColor = [UIColor whiteColor];
             
             
+            
+            NSString *v = @"";
+            for (NSInteger i = 0 ; i < rate ; i++) {
+              v = [NSString stringWithFormat:@"%@%@", v, @"★"];
+            }
+            for (NSInteger i = rate ; i < 5 ; i++){
+              v = [NSString stringWithFormat:@"%@%@", v, @"☆"];
+            }
            
-            star.text = @"\uE907";
+            star.text = v;
+            star.font = [UIFont systemFontOfSize:14];
             star.textColor = [UIColor redColor];
-       
-      
-        
             
         }
       
@@ -215,15 +222,16 @@
         
         
         star = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
-        [star setFont:[UIFont fontWithName:@"icomoon" size:32]];
-        [rateView addSubview:star];
+       // [star setFont:[UIFont fontWithName:@"icomoon" size:12]];
+       // [rateView addSubview:star];
         
         
         
         
         [self addSubview:imageView];
         [self addSubview:uiview];
-        [self addSubview:rateView];
+        //[self addSubview:rateView];
+        [self addSubview:star];
         
       
         

@@ -31,6 +31,7 @@
         self.title = parse[@"food"][@"name"];
         self.size = [parse[@"type"] integerValue ];
         self.cookId = parse.objectId ;
+        self.rate = [parse[@"rating"] integerValue];
     }
     return self;
 }

@@ -16,6 +16,7 @@
     NSString *price ;
     NSInteger size;
     NSString *coodId ;
+    NSInteger rate ;
 }
 
 -(id)initWithDictionary:(NSDictionary *)aDict;
@@ -29,5 +30,6 @@
 @property (strong) NSString *price ;
 @property (strong) PFFile *image;
 @property (strong) NSString *cookId ;
+@property (readwrite) NSInteger rate ; 
 
 @end
