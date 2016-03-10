@@ -15,14 +15,15 @@ import UIKit
     optional func textFieldShouldSelect(textField: MPGTextField) -> Bool
 }
 
-class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
+class MPGTextField: UISearchBar, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
     var mDelegate : MPGTextFieldDelegate?
     var tableViewController : UITableViewController?
     var data = [Dictionary<String, AnyObject>]()
     
     //Set this to override the default color of suggestions popover. The default color is [UIColor colorWithWhite:0.8 alpha:0.9]
-    @IBInspectable var popoverBackgroundColor : UIColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+//    UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+    @IBInspectable var popoverBackgroundColor : UIColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.9)
     
     //Set this to override the default frame of the suggestions popover that will contain the suggestions pertaining to the search query. The default frame will be of the same width as textfield, of height 200px and be just below the textfield.
     @IBInspectable var popoverSize : CGRect?
@@ -38,6 +39,7 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
+        self.delegate = self
     }
     
     /*
@@ -48,7 +50,12 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
     // Drawing code
     }
     */
-    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        layoutSubviews()
+    }
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        mDelegate?.textFieldEmpty?(self)
+    }
     override func layoutSubviews(){
         super.layoutSubviews()
         let str : String = self.text!
@@ -178,9 +185,10 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
         
         return cell!
     }
-    
+    var selectedIndex: Int?
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         //self.text = self.applyFilterWithSearchQuery(self.text)[indexPath.row]["DisplayText"]
+        self.selectedIndex = indexPath.row
         self.resignFirstResponder()
     }
     
@@ -190,8 +198,8 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
     func applyFilterWithSearchQuery(filter : String) -> [Dictionary<String, AnyObject>]
     {
         //let predicate = NSPredicate(format: "DisplayText BEGINSWITH[cd] \(filter)")
-        var lower = (filter as NSString).lowercaseString
-        var filteredData = data.filter({
+        _ = (filter as NSString).lowercaseString
+        let filteredData = data.filter({
             if let match : AnyObject  = $0["DisplayText"]{
                 //println("LCS = \(filter.lowercaseString)")
                 return (match as! NSString).lowercaseString.containsString((filter as NSString).lowercaseString)
@@ -208,8 +216,8 @@ class MPGTextField: UITextField, UITextFieldDelegate, UITableViewDelegate, UITab
             table.tableView.removeFromSuperview()
         }
         if ((mDelegate?.textFieldShouldSelect?(self)) != nil){
-            if self.applyFilterWithSearchQuery(self.text!).count > 0 {
-                let selectedData = self.applyFilterWithSearchQuery(self.text!)[0]
+            if self.applyFilterWithSearchQuery(self.text!).count > 0 && selectedIndex != nil{
+                let selectedData = self.applyFilterWithSearchQuery(self.text!)[selectedIndex!]
                 let displayText : AnyObject? = selectedData["DisplayText"]
                 self.text = displayText as! String
                 mDelegate?.textFieldDidEndEditing?(self, withSelection: selectedData)

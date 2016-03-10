@@ -109,7 +109,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XL9-IB-QqG">
                                 <rect key="frame" x="240" y="513" width="121" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="9E0-rW-O8Y"/>
+                                    <constraint firstAttribute="width" constant="121" id="pFC-h6-LZA"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Table"/>
@@ -131,30 +131,41 @@
                                     <segue destination="2w1-Tg-i50" kind="embed" id="jvq-Jp-V0s"/>
                                 </connections>
                             </containerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaQ-Gw-FsW" customClass="SearchBar" customModule="Gourmand" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="70" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="gYn-U3-bkE" customClass="SearchBar" customModule="Gourmand" customModuleProvider="target">
+                                <rect key="frame" x="30" y="64" width="540" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="85T-2k-Nyg" firstAttribute="centerX" secondItem="XL9-IB-QqG" secondAttribute="centerX" id="3gd-tA-8p3"/>
-                            <constraint firstItem="85T-2k-Nyg" firstAttribute="top" secondItem="WdI-OR-Ygf" secondAttribute="top" id="8nE-fy-4U1"/>
-                            <constraint firstItem="XL9-IB-QqG" firstAttribute="top" secondItem="85T-2k-Nyg" secondAttribute="bottom" constant="13" id="B3m-4b-BBt"/>
-                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="bottom" secondItem="85T-2k-Nyg" secondAttribute="bottom" id="NiU-kX-al5"/>
-                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="leading" secondItem="85T-2k-Nyg" secondAttribute="leading" id="OjS-J1-IF6"/>
-                            <constraint firstItem="85T-2k-Nyg" firstAttribute="top" secondItem="u8P-Lw-WDq" secondAttribute="top" constant="108" id="VRW-eD-2uE"/>
-                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="trailing" secondItem="85T-2k-Nyg" secondAttribute="trailing" id="fYF-E8-UhR"/>
-                            <constraint firstAttribute="trailing" secondItem="85T-2k-Nyg" secondAttribute="trailing" id="jBT-ed-e7c"/>
-                            <constraint firstItem="85T-2k-Nyg" firstAttribute="leading" secondItem="u8P-Lw-WDq" secondAttribute="leading" id="yer-jZ-nAr"/>
-                            <constraint firstItem="hpv-sE-VAn" firstAttribute="top" secondItem="XL9-IB-QqG" secondAttribute="bottom" constant="10" id="zJH-6u-ytm"/>
+                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="leading" secondItem="u8P-Lw-WDq" secondAttribute="leading" id="0je-70-sxP"/>
+                            <constraint firstItem="gYn-U3-bkE" firstAttribute="centerX" secondItem="85T-2k-Nyg" secondAttribute="centerX" id="2PU-fs-FHt"/>
+                            <constraint firstItem="XL9-IB-QqG" firstAttribute="top" secondItem="WdI-OR-Ygf" secondAttribute="bottom" constant="13" id="2az-7f-pXu"/>
+                            <constraint firstItem="gYn-U3-bkE" firstAttribute="leading" secondItem="u8P-Lw-WDq" secondAttribute="leadingMargin" constant="10" id="4ZB-f4-cFT"/>
+                            <constraint firstItem="85T-2k-Nyg" firstAttribute="bottom" secondItem="WdI-OR-Ygf" secondAttribute="bottom" id="8sD-QK-IDn"/>
+                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="trailing" secondItem="gYn-U3-bkE" secondAttribute="trailing" id="9TN-Rt-zHu"/>
+                            <constraint firstAttribute="trailing" secondItem="85T-2k-Nyg" secondAttribute="trailing" id="D4u-3n-OgA"/>
+                            <constraint firstItem="85T-2k-Nyg" firstAttribute="top" secondItem="gYn-U3-bkE" secondAttribute="bottom" id="LAz-dM-4D5"/>
+                            <constraint firstItem="85T-2k-Nyg" firstAttribute="trailing" secondItem="WdI-OR-Ygf" secondAttribute="trailing" id="UVf-Wz-jBw"/>
+                            <constraint firstItem="85T-2k-Nyg" firstAttribute="top" secondItem="WdI-OR-Ygf" secondAttribute="top" id="WU0-s4-W5C"/>
+                            <constraint firstItem="gYn-U3-bkE" firstAttribute="leading" secondItem="WdI-OR-Ygf" secondAttribute="leading" constant="30" id="ZUw-Qo-Npi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYn-U3-bkE" secondAttribute="trailing" constant="10" id="bTU-2Y-4rh"/>
+                            <constraint firstItem="WdI-OR-Ygf" firstAttribute="centerX" secondItem="XL9-IB-QqG" secondAttribute="centerX" id="fvt-1G-WHp"/>
+                            <constraint firstItem="hpv-sE-VAn" firstAttribute="top" secondItem="XL9-IB-QqG" secondAttribute="bottom" constant="10" id="kI3-iF-ode"/>
+                            <constraint firstItem="gYn-U3-bkE" firstAttribute="top" secondItem="NRp-sW-JBe" secondAttribute="bottom" id="llP-Lq-635"/>
+                            <constraint firstItem="85T-2k-Nyg" firstAttribute="leading" secondItem="WdI-OR-Ygf" secondAttribute="leading" id="t2k-k0-ku6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZUw-Qo-Npi"/>
+                                <exclude reference="9TN-Rt-zHu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="Ich-GE-COK"/>
                     <navigationItem key="navigationItem" id="P9a-cK-U1S"/>
                     <connections>
-                        <outlet property="searchBar" destination="AaQ-Gw-FsW" id="hgU-hN-AQH"/>
+                        <outlet property="searchBar" destination="gYn-U3-bkE" id="VFj-Gz-ans"/>
                         <outlet property="searchContainer" destination="85T-2k-Nyg" id="Su2-70-DS2"/>
                         <outlet property="searchOptionContainer" destination="WdI-OR-Ygf" id="uLb-Ja-z72"/>
                         <outlet property="segmentedControl" destination="XL9-IB-QqG" id="fdb-gz-iA5"/>
